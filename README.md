@@ -27,7 +27,7 @@
 
 <div align="center">
 
-*Não basta o código funcionar — ele precisa importar para quem o usa.*
+*Seja a mudança que você quer ver no mundo.*
 
 </div>
 
@@ -78,11 +78,6 @@
 
 ## 📊 GitHub Stats
 
-<div align="center">
-
-<img height="160em" src="https://github-readme-stats.vercel.app/api?username=alexzjss&show_icons=true&theme=merko&bg_color=0d0d1a&title_color=00ffe7&icon_color=7b00ff&text_color=a78bfa&border_color=7b00ff&count_private=true&hide_border=false" />
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&theme=merko&bg_color=0d0d1a&title_color=00ffe7&text_color=a78bfa&border_color=7b00ff&langs_count=6" />
-
 </div>
 
 <div align="center">
@@ -98,20 +93,6 @@
 <div align="center">
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=alexzjss&bg_color=0d0d1a&color=00ffe7&line=7b00ff&point=ffffff&area=true&area_color=7b00ff&hide_border=false&border_color=7b00ff&title_color=00ffe7" />
-
-</div>
-
----
-
-## 🐍 Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/alexzjss/alexzjss/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/alexzjss/alexzjss/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/alexzjss/alexzjss/output/github-snake-dark.svg" />
-</picture>
 
 </div>
 
