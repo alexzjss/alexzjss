@@ -27,7 +27,7 @@
 
 <div align="center">
 
-*Seja a mudança que você quer ver no mundo.*
+*Eu não quero acreditar, eu quero entender.*
 
 </div>
 
