@@ -4,7 +4,7 @@
 
 <p align="center">
   estudante de sistemas de informação na usp<br/>
-  programador full stack em <b>python</b> e <b>javascript</b> com área de dados
+  programador full stack em <b>Python</b> e <b>JavaScript</b> com área de dados
 </p>
 
 <p align="center">
