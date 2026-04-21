@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  building things by day, debugging them by night
+  we've got the dreamers' disease
 </p>
 
 <p align="center">
