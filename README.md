@@ -1,57 +1,78 @@
-# Hey there, I'm Alex! 👋🦖
+<div align="center">
 
-> *Student by day, bug factory by night.*
+# Alex
 
-I'm a student passionate about **low-level systems**, **data**, and **AI** — basically everything from bare-metal C to training models. I like building things that are fast, smart, or at least interesting enough to keep me awake past midnight.
+### Fullstack & Data-focused Developer  
+### Computer Science Student at USP
 
----
-
-## 🛠️ Tech Stack
-
-### Languages
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-FF6B6B?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### Areas of Interest
-![Data](https://img.shields.io/badge/Data-FF6F00?style=for-the-badge&logo=databricks&logoColor=white)
-![AI / ML](https://img.shields.io/badge/AI%20%2F%20ML-8E44AD?style=for-the-badge&logo=pytorch&logoColor=white)
-![Systems](https://img.shields.io/badge/Systems-2ECC71?style=for-the-badge&logo=linux&logoColor=white)
-
----
-
-## 📊 Top Languages
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&theme=radical&langs_count=8)](https://github.com/alexzjss)
-
----
-
-## 🚀 Current Projects
-
-| 🗂️ Project | 📝 Description | 🔧 Stack |
-|---|---|---|
-| `project-alpha` | *(description coming soon)* | C / C++ |
-| `project-beta` | *(description coming soon)* | Python / AI |
-| `project-gamma` | *(description coming soon)* | TypeScript / SQL |
-
-> ⚠️ *These are works in progress — or abandoned — or both. No one knows yet.*
-
----
-
-## 📬 Let's Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/alexzjss)
-[![Instagram](https://img.shields.io/badge/Instagram-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/alexzjss)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
-[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://yourwebsite.com)
-
----
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=alexzjss&style=flat-square&color=blueviolet" alt="profile views"/>
-  <br/>
-  <sub>made with ☕ and questionable commit messages</sub>
+<p>
+  Building clean systems, data-driven solutions, and useful tools.
 </p>
+
+<br>
+
+<a href="https://github.com/alexzjss">
+  <img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/alex-jsz/">
+  <img src="https://img.shields.io/badge/LinkedIn-1e3a8a?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://www.instagram.com/alex.jsz/">
+  <img src="https://img.shields.io/badge/Instagram-7c3aed?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+<a href="https://alexzjss.github.io/website/">
+  <img src="https://img.shields.io/badge/Portfolio-0f172a?style=for-the-badge&logo=firefox-browser&logoColor=white"/>
+</a>
+
+</div>
+
+---
+
+## About Me
+
+```txt
+> Fullstack and data-oriented developer
+> Focused on performance, architecture, and scalable solutions
+> Interested in low-level programming, backend systems, and data engineering
+```
+
+---
+
+## Stack
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/C-283593?style=for-the-badge&logo=c&logoColor=white"/>
+<img src="https://img.shields.io/badge/C++-1565c0?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python-2e7d32?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-f9a825?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/SQL-6a1b9a?style=for-the-badge&logo=postgresql&logoColor=white"/>
+
+</div>
+
+---
+
+## Featured Project
+
+### DaSIboard
+
+University platform project focused on centralizing academic information:
+
+- disciplines and subjects
+- professors
+- study materials
+- student interaction
+- academic organization tools
+
+Designed to improve how students navigate university life and academic resources.
+
+---
+
+<div align="center">
+
+"Building useful things, one system at a time."
+
+</div>
