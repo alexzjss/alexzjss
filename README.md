@@ -26,7 +26,7 @@
 
 | Category | Technologies |
 | :--- | :--- |
-| **Logic & Computation** | <img src="https://img.shields.io/badge/C-000000?style=flat&logo=c&logoColor=white"/> <img src="https://img.shields.io/badge/C++-000000?style=flat&logo=cplusplus&logoColor=white"/> <img src="https://img.shields.io/badge/Java-000000?style=flat&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Python-000000?style=flat&logo=python&logoColor=white"/> |
+| **Logic & Computation** | <img src="https://img.shields.io/badge/C-000000?style=flat&logo=c&logoColor=white"/> <img src="https://img.shields.io/badge/C++-000000?style=flat&logo=cplusplus&logoColor=white"/> <img src="https://img.shields.io/badge/Python-000000?style=flat&logo=python&logoColor=white"/> |
 | **Architecture & Web** | <img src="https://img.shields.io/badge/TypeScript-000000?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-000000?style=flat&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-000000?style=flat&logo=node.js&logoColor=white"/> |
 | **Data & Storage** | <img src="https://img.shields.io/badge/SQL-000000?style=flat&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/Linux-000000?style=flat&logo=linux&logoColor=white"/> |
 
