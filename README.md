@@ -1,78 +1,45 @@
-<div align="center">
+# 🧪 R&D Desk // Alex
 
-# Alex
+**Information Systems @ USP** | **Fullstack Engineering & Data Architecture**
 
-### Fullstack & Data-focused Developer  
-### Computer Science Student at USP
-
-<p>
-  Building clean systems, data-driven solutions, and useful tools.
-</p>
+> **Current Status:** Wiring backend systems, compiling custom engines, and building tools from the ground up. If it can be optimized, I'm tearing it apart to see how it works.
 
 <br>
 
-<a href="https://github.com/alexzjss">
-  <img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
-
-<a href="https://www.linkedin.com/in/alex-jsz/">
-  <img src="https://img.shields.io/badge/LinkedIn-1e3a8a?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="https://www.instagram.com/alex.jsz/">
-  <img src="https://img.shields.io/badge/Instagram-7c3aed?style=for-the-badge&logo=instagram&logoColor=white"/>
-</a>
-
-<a href="https://alexzjss.github.io/website/">
-  <img src="https://img.shields.io/badge/Portfolio-0f172a?style=for-the-badge&logo=firefox-browser&logoColor=white"/>
-</a>
-
-</div>
+<a href="https://github.com/alexzjss"><img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/alex-jsz/"><img src="https://img.shields.io/badge/LinkedIn-262626?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://alexzjss.github.io/website/"><img src="https://img.shields.io/badge/Portfolio-1a1a1a?style=for-the-badge&logo=firefox-browser&logoColor=white"/></a>
 
 ---
 
-## About Me
+## 🔬 The Workbench (Current Research & Projects)
 
-```txt
-> Fullstack and data-oriented developer
-> Focused on performance, architecture, and scalable solutions
-> Interested in low-level programming, backend systems, and data engineering
-```
+*   **DaSIboard:** Architecting and scaling a fullstack academic platform. Centralizing disciplines, study materials, and student interaction for the university ecosystem.
+*   **Low-Level Graphics:** Developing a custom 3D rendering engine from scratch using `C++`. Exploring the raw math behind graphics and spatial environments.
+*   **System Environments:** Constantly tuning advanced Linux architectures (Fedora/Arch) and optimizing custom window manager workflows (Hyprland). 
 
 ---
 
-## Stack
+## 📐 System Schematics
 
-<div align="center">
+**[ Core Components ]**
 
-<img src="https://img.shields.io/badge/C-283593?style=for-the-badge&logo=c&logoColor=white"/>
-<img src="https://img.shields.io/badge/C++-1565c0?style=for-the-badge&logo=cplusplus&logoColor=white"/>
-<img src="https://img.shields.io/badge/Python-2e7d32?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-f9a825?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/SQL-6a1b9a?style=for-the-badge&logo=postgresql&logoColor=white"/>
+| Category | Technologies |
+| :--- | :--- |
+| **Logic & Computation** | <img src="https://img.shields.io/badge/C-000000?style=flat&logo=c&logoColor=white"/> <img src="https://img.shields.io/badge/C++-000000?style=flat&logo=cplusplus&logoColor=white"/> <img src="https://img.shields.io/badge/Java-000000?style=flat&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Python-000000?style=flat&logo=python&logoColor=white"/> |
+| **Architecture & Web** | <img src="https://img.shields.io/badge/TypeScript-000000?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-000000?style=flat&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-000000?style=flat&logo=node.js&logoColor=white"/> |
+| **Data & Storage** | <img src="https://img.shields.io/badge/SQL-000000?style=flat&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/Linux-000000?style=flat&logo=linux&logoColor=white"/> |
 
-</div>
-
----
-
-## Featured Project
-
-### DaSIboard
-
-University platform project focused on centralizing academic information:
-
-- disciplines and subjects
-- professors
-- study materials
-- student interaction
-- academic organization tools
-
-Designed to improve how students navigate university life and academic resources.
+**[ Analytical Foundation ]**
+*   **Mathematics:** OBMEP Medalist (Brazilian Mathematical Olympiad). Heavy focus on discrete mathematics, calculus, and logic-driven problem-solving.
 
 ---
 
-<div align="center">
+## ⚙️ Field Notes
 
-"Building useful things, one system at a time."
-
-</div>
+```text
+// To-Do / Active Logs:
+- [x] Launch DaSIboard architecture
+- [ ] Optimize 3D engine render loops
+- [ ] Implement data-focused AI solutions
+- [x] Configure Tailscale tunneling for isolated environments
