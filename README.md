@@ -32,8 +32,7 @@
 
 **[ Analytical Foundation ]**
 *   **Mathematics:** OBMEP Medalist (Brazilian Mathematical Olympiad). Heavy focus on discrete mathematics, calculus, and logic-driven problem-solving.
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white"/>
-<img src="https://img.shields.io/badge/C++-000000?style=flat&logo=cplusplus&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-000000?style=flat&logo=openjdk&logoColor=white"/>
 
 ---
 
