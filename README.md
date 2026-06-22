@@ -43,3 +43,4 @@
 - [ ] Optimize 3D engine render loops
 - [ ] Implement data-focused AI solutions
 - [x] Configure Tailscale tunneling for isolated environments
+- [ ] Finish and polish the Virtual Tabletop RPG App
