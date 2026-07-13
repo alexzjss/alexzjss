@@ -1,46 +1,35 @@
-# 🧪 R&D Desk // Alex
+<div align="center">
 
-**Information Systems @ USP** | **Fullstack Engineering & Data Architecture**
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/header-v1.svg"/><img src="assets/header-v1.svg" alt="Alex de Jesus Santana"/></picture>
 
-> **Current Status:** Wiring backend systems, compiling custom engines, and building tools from the ground up. If it can be optimized, I'm tearing it apart to see how it works.
+<a href="https://alexzjss.github.io/website/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/PORTF%C3%93LIO-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/PORTF%C3%93LIO-ffffff?style=flat-square&logoColor=000000" alt="Portf\u00f3lio"/></picture></a>
+<a href="https://github.com/alexzjss"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GITHUB-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/GITHUB-ffffff?style=flat-square&logo=github&logoColor=000000" alt="GitHub"/></picture></a>
+<a href="https://www.linkedin.com/in/alex-jsz/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000" alt="LinkedIn"/></picture></a>
 
-<br>
+</div>
 
-<a href="https://github.com/alexzjss"><img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white"/></a>
-<a href="https://www.linkedin.com/in/alex-jsz/"><img src="https://img.shields.io/badge/LinkedIn-262626?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-<a href="https://alexzjss.github.io/website/"><img src="https://img.shields.io/badge/Portfolio-1a1a1a?style=for-the-badge&logo=firefox-browser&logoColor=white"/></a>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — whoami"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/whoami.svg"/><img src="assets/whoami.svg" alt="Sobre Alex"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — mapa do sistema"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/ecosystem.svg"/><img src="assets/ecosystem.svg" alt="Mapa do sistema"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="03 — projetos"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="6 projetos"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/s04.svg" alt="04 — telemetria"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/telemetry.svg"/><img src="assets/telemetry.svg" alt="Telemetria de desenvolvimento"/></picture>
 
----
+<div align="center">
 
-## 🔬 The Workbench (Current Research & Projects)
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=alexzjss&show_icons=true&hide_border=true&title_color=ffffff&text_color=dddddd&icon_color=ffffff&bg_color=00000000"/><img src="https://github-readme-stats.vercel.app/api?username=alexzjss&show_icons=true&hide_border=true&title_color=111111&text_color=222222&icon_color=111111&bg_color=00000000" width="48%" alt="Estat\u00edsticas do GitHub"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&hide_border=true&title_color=ffffff&text_color=dddddd&bg_color=00000000"/><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&hide_border=true&title_color=111111&text_color=222222&bg_color=00000000" width="48%" alt="Linguagens mais usadas"/></picture>
 
-*   **DaSIboard:** Architecting and scaling a fullstack academic platform. Centralizing disciplines, study materials, and student interaction for the university ecosystem.
-*   **Low-Level Graphics:** Developing a custom 3D rendering engine from scratch using `C++`. Exploring the raw math behind graphics and spatial environments.
-*   **System Environments:** Constantly tuning advanced Linux architectures (Fedora/Arch) and optimizing custom window manager workflows (Hyprland). 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=alexzjss&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area_color=ffffff&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY"/><img src="https://github-readme-activity-graph.vercel.app/graph?username=alexzjss&bg_color=00000000&color=000000&line=000000&point=000000&area_color=000000&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="Gr\u00e1fico de contribui\u00e7\u00f5es no GitHub"/></picture>
 
----
+</div>
 
-## 📐 System Schematics
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/><img src="assets/s05.svg" alt="05 — a rota"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/timeline.svg"/><img src="assets/timeline.svg" alt="Linha do tempo"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/><img src="assets/s06.svg" alt="06 — stack"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"/><img src="assets/stack.svg" alt="Stack t\u00e9cnica"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"/><img src="assets/footer.svg" alt="Status atual"/></picture>
 
-**[ Core Components ]**
-
-| Category | Technologies |
-| :--- | :--- |
-| **Logic & Computation** | <img src="https://img.shields.io/badge/C-000000?style=flat&logo=c&logoColor=white"/> <img src="https://img.shields.io/badge/Java-000000?style=flat&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Python-000000?style=flat&logo=python&logoColor=white"/> |
-| **Architecture & Web** | <img src="https://img.shields.io/badge/TypeScript-000000?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-000000?style=flat&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-000000?style=flat&logo=node.js&logoColor=white"/> |
-| **Data & Storage** | <img src="https://img.shields.io/badge/SQL-000000?style=flat&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/Linux-000000?style=flat&logo=linux&logoColor=white"/> |
-
-**[ Analytical Foundation ]**
-*   **Mathematics:** OBMEP Medalist (Brazilian Mathematical Olympiad). Heavy focus on discrete mathematics, calculus, and logic-driven problem-solving.
-
----
-
-## ⚙️ Field Notes
-
-```text
-// To-Do / Active Logs:
-- [x] Launch DaSIboard architecture
-- [ ] Optimize 3D engine render loops
-- [ ] Implement data-focused AI solutions
-- [x] Configure Tailscale tunneling for isolated environments
-- [ ] Finish and polish the Virtual Tabletop RPG App
+<!-- uma imagem responsiva por se\u00e7\u00e3o; sem renderiza\u00e7\u00e3o duplicada claro/escuro -->
