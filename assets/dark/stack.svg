@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 354" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stack técnica">
+  <style>
+    :root { --bone: #444444; --rule: #C0C0C0; --muted: #888888; --dim: #AAAAAA; --accent: #555555; }
+    @media (prefers-color-scheme: dark) { :root { --bone: #DDDDDD; --rule: #444444; --muted: #777777; --dim: #666666; --accent: #AAAAAA; } }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.2s cubic-bezier(.6,0,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .fade { opacity: 0; animation: fade .7s ease forwards; }
+    @keyframes fade { to { opacity: 1; } }
+    .a1{animation-delay:.1s} .a2{animation-delay:.3s} .a3{animation-delay:.5s} .a4{animation-delay:.7s} .a5{animation-delay:.9s} .a6{animation-delay:1.1s} .a7{animation-delay:1.3s} .a8{animation-delay:1.5s}
+    @media (prefers-reduced-motion: reduce) { .draw,.fade { animation: none; } .draw{stroke-dashoffset:0} .fade{opacity:1} }
+
+  </style>
+<text class="mono fade a1" x="48" y="30" font-size="12" letter-spacing="2" fill="var(--muted)" text-anchor="start">STACK TÉCNICA</text>
+<text class="mono fade a1" x="952" y="30" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="end">FIG. 05</text>
+<line class="draw a1" x1="48" y1="46" x2="952" y2="46" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a2" x="48" y="78" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">LINGUAGENS</text>
+<text class="mono fade a2" x="48" y="98" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">Python · Java · JavaScript · TypeScript · C++</text>
+<text class="mono fade a3" x="48" y="124" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">INFRAESTRUTURA</text>
+<text class="mono fade a3" x="48" y="144" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">Sistemas de dados · organização de pipelines · depuração de BD</text>
+<text class="mono fade a4" x="48" y="170" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">CIÊNCIA DE DADOS &amp; IA</text>
+<text class="mono fade a4" x="48" y="190" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">Análise de dados · pesquisa aplicada · Gemini Gems</text>
+<text class="mono fade a5" x="48" y="216" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">WEB</text>
+<text class="mono fade a5" x="48" y="236" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">Aplicações full-stack em TypeScript/JavaScript</text>
+<text class="mono fade a6" x="48" y="262" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">GAME DEV</text>
+<text class="mono fade a6" x="48" y="282" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">Prototipagem e ferramentas para mesas de RPG</text>
+<text class="mono fade a7" x="48" y="308" font-size="11" letter-spacing="1.5" fill="var(--muted)" text-anchor="start">GESTÃO &amp; COMUNIDADE</text>
+<text class="mono fade a7" x="48" y="328" font-size="12.5" letter-spacing="0.3" fill="var(--accent)" text-anchor="start">DASI · Conway · Hype · Codelab Leste · COSSI</text>
+
+</svg>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A rota até aqui">
+  <style>
+    :root { --bone: #444444; --rule: #C0C0C0; --muted: #888888; --dim: #AAAAAA; --accent: #555555; }
+    @media (prefers-color-scheme: dark) { :root { --bone: #DDDDDD; --rule: #444444; --muted: #777777; --dim: #666666; --accent: #AAAAAA; } }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.2s cubic-bezier(.6,0,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .fade { opacity: 0; animation: fade .7s ease forwards; }
+    @keyframes fade { to { opacity: 1; } }
+    .a1{animation-delay:.1s} .a2{animation-delay:.3s} .a3{animation-delay:.5s} .a4{animation-delay:.7s} .a5{animation-delay:.9s} .a6{animation-delay:1.1s} .a7{animation-delay:1.3s} .a8{animation-delay:1.5s}
+    @media (prefers-reduced-motion: reduce) { .draw,.fade { animation: none; } .draw{stroke-dashoffset:0} .fade{opacity:1} }
+
+  </style>
+<text class="mono fade a1" x="48" y="28" font-size="12" letter-spacing="2" fill="var(--muted)" text-anchor="start">A ROTA ATÉ AQUI</text>
+<text class="mono fade a1" x="1152" y="28" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="end">FIG. 04</text>
+<line class="draw a1" x1="48" y1="44" x2="1152" y2="44" stroke="var(--rule)" stroke-width="1"/>
+<line class="draw a2" x1="60" y1="130" x2="1140" y2="130" stroke="var(--rule)" stroke-width="1"/>
+<circle class="fade a2" cx="60.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a2" x="60.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2024</text>
+<text class="mono fade a2" x="60.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">início na USP ·</text>
+<text class="mono fade a2" x="60.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">Sistemas de Informação</text>
+<circle class="fade a3" cx="240.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a3" x="240.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2024</text>
+<text class="mono fade a3" x="240.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">entrada no DASI, Conway,</text>
+<text class="mono fade a3" x="240.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">Codelab Leste e COSSI</text>
+<circle class="fade a4" cx="420.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a4" x="420.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2025</text>
+<text class="mono fade a4" x="420.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">início da pesquisa</text>
+<text class="mono fade a4" x="420.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">no Hype USP</text>
+<circle class="fade a5" cx="600.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a5" x="600.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2026</text>
+<text class="mono fade a5" x="600.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">dasiboard —</text>
+<text class="mono fade a5" x="600.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">lançamento público</text>
+<circle class="fade a6" cx="780.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a6" x="780.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2026</text>
+<text class="mono fade a6" x="780.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">pesquisa em depuração de</text>
+<text class="mono fade a6" x="780.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">erros em BD (Java/JDBC)</text>
+<circle class="fade a7" cx="960.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a7" x="960.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">AGORA</text>
+<text class="mono fade a7" x="960.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">cursando SI ·</text>
+<text class="mono fade a7" x="960.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">aberto a estágio</text>
+<circle class="fade a8" cx="1140.0" cy="130" r="4" fill="none" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a8" x="1140.0" y="110" font-size="11" letter-spacing="1" fill="var(--bone)" text-anchor="middle">2028 →</text>
+<text class="mono fade a8" x="1140.0" y="156" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">a parte</text>
+<text class="mono fade a8" x="1140.0" y="170" font-size="10" letter-spacing="0.2" fill="var(--dim)" text-anchor="middle">interessante</text>
+
+</svg>

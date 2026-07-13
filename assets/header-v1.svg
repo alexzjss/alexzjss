@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alex de Jesus Santana — Estudante e Desenvolvedor">
+  <style>
+    :root { --bone: #444444; --rule: #C0C0C0; --muted: #888888; --dim: #AAAAAA; --accent: #555555; }
+    @media (prefers-color-scheme: dark) { :root { --bone: #DDDDDD; --rule: #444444; --muted: #777777; --dim: #666666; --accent: #AAAAAA; } }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.2s cubic-bezier(.6,0,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .fade { opacity: 0; animation: fade .7s ease forwards; }
+    @keyframes fade { to { opacity: 1; } }
+    .a1{animation-delay:.1s} .a2{animation-delay:.3s} .a3{animation-delay:.5s} .a4{animation-delay:.7s} .a5{animation-delay:.9s} .a6{animation-delay:1.1s} .a7{animation-delay:1.3s} .a8{animation-delay:1.5s}
+    @media (prefers-reduced-motion: reduce) { .draw,.fade { animation: none; } .draw{stroke-dashoffset:0} .fade{opacity:1} }
+
+      :root { --bone: #000000; --muted: #000000; --dim: #000000; --rule: #000000; --accent: #000000; }
+
+  </style>
+<line class="draw a1" x1="48" y1="58" x2="952" y2="58" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a1" x="48" y="44" font-size="11" letter-spacing="3.5" fill="var(--muted)" text-anchor="start">PORTFOLIO — INDEX Nº 001</text>
+<text class="mono fade a1" x="952" y="44" font-size="11" letter-spacing="3.5" fill="var(--muted)" text-anchor="end">SÃO PAULO, BR — 23.55° S</text>
+<text class="mono fade a2" x="46" y="176" font-size="60" letter-spacing="-1" fill="var(--bone)" text-anchor="start">Alex de Jesus Santana</text>
+<text class="mono fade a3" x="48" y="214" font-size="19" letter-spacing="0" fill="var(--muted)" text-anchor="start">Estudante de Sistemas de Informação — USP, São Paulo.</text>
+<text class="mono fade a4" x="48" y="274" font-size="12.5" letter-spacing="1" fill="var(--dim)" text-anchor="start">foco  ▸</text>
+<text class="mono fade a4" x="128" y="274" font-size="12.5" letter-spacing="1" fill="var(--accent)" text-anchor="start">infraestrutura · ciência de dados · inteligência artificial · full-stack</text>
+<text class="mono fade a5" x="48" y="300" font-size="12.5" letter-spacing="1" fill="var(--dim)" text-anchor="start">aberto a estágio · pesquisa · colaboração</text>
+<line class="draw a1" x1="48" y1="330" x2="952" y2="330" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono fade a6" x="48" y="356" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="start">INFRAESTRUTURA</text>
+<text class="mono fade a1" x="164.39999999999998" y="356" font-size="11" letter-spacing="0" fill="var(--rule)" text-anchor="start">·</text>
+<text class="mono fade a7" x="194.39999999999998" y="356" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="start">CIÊNCIA DE DADOS</text>
+<text class="mono fade a1" x="326.0" y="356" font-size="11" letter-spacing="0" fill="var(--rule)" text-anchor="start">·</text>
+<text class="mono fade a8" x="356.0" y="356" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="start">INTELIGÊNCIA ARTIFICIAL</text>
+<text class="mono fade a1" x="540.8" y="356" font-size="11" letter-spacing="0" fill="var(--rule)" text-anchor="start">·</text>
+<text class="mono fade a9" x="570.8" y="356" font-size="11" letter-spacing="2" fill="var(--dim)" text-anchor="start">FULL-STACK</text>
+<text class="mono fade a8" x="952" y="356" font-size="11" letter-spacing="1" fill="var(--muted)" text-anchor="end">USP — 2024 / 2028</text>
+
+</svg>
