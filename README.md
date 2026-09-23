@@ -15,19 +15,11 @@ São Paulo, SP — Brasil
 
 <br>
 
-## 🌳 git-bonsai
-
 <div align="center">
 
 <img src="output/bonsai-growth.gif" width="384" alt="git-bonsai de alexzjss" />
 
-<sub>Uma árvore procedural crescida a partir do meu histórico de commits — determinística, única para o meu usuário.</sub>
-
-[![grown with git-bonsai](https://img.shields.io/badge/🌳_grown_with-git--bonsai-2ea44f?style=flat-square)](https://github.com/egorthinks/git-bonsai)
-
 </div>
-
-> A imagem acima é gerada automaticamente pelo workflow em `.github/workflows/bonsai.yml` — veja as instruções de instalação no fim deste README.
 
 <br>
 
@@ -88,30 +80,3 @@ Interesses principais: Engenharia de Software, Backend, Engenharia de Dados, Mac
 </div>
 
 <br>
-
----
-
-<details>
-<summary>⚙️ Como instalar o git-bonsai (para reproduzir este README)</summary>
-
-Crie `.github/workflows/bonsai.yml` no repositório de perfil (o repositório com o mesmo nome do seu usuário):
-
-```yaml
-name: bonsai
-on:
-  schedule:
-    - cron: '0 3 * * *'   # recresce diariamente
-  workflow_dispatch:
-permissions:
-  contents: write
-jobs:
-  grow:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: egorthinks/git-bonsai@v1
-```
-
-Isso gera `output/bonsai-growth.gif` (e `bonsai.svg` / `bonsai.png` / `bonsai.gif`), que é exatamente o caminho referenciado na seção **git-bonsai** acima.
-
-</details>
