@@ -2,74 +2,55 @@
 
 # Alex Santana
 
-### Software & Data Engineer · Information Systems @ USP
-`Python` · `Java` · `TypeScript` · `SQL` · `Machine Learning`
+**Software & Data Engineer · Information Systems @ USP**
 
-São Paulo, SP — Brasil
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alex-jsz)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white)](https://website-cyan-onewkdbdk7vs0.vercel.app/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:benalex511@gmail.com)
+São Paulo, Brazil
 
 </div>
 
 <br>
 
-<div align="center">
-
-<img src="output/bonsai-growth.gif" width="384" alt="git-bonsai de alexzjss" />
-
-</div>
-
-<br>
-
-## 🧭 Sobre mim
-
-Estudante de **Sistemas de Informação** na **Universidade de São Paulo (USP)**, focado em Engenharia de Software, Backend, Dados e Inteligência Artificial.
-
-Combino desenvolvimento de software, pesquisa acadêmica e projetos reais de tecnologia. Atualmente pesquiso **Software Testing & Debugging** com Java e Apache Maven, e participo de iniciativas de **Data Science e IA** com Python. Dentro da comunidade universitária, contribuo com projetos de TI — incluindo o **DaSIboard**, plataforma acadêmica usada por mais de 700 estudantes de Sistemas de Informação.
-
-Interesses principais: Engenharia de Software, Backend, Engenharia de Dados, Machine Learning e IA — especialmente problemas envolvendo sistemas, dados, automação e soluções escaláveis.
+<table align="center">
+<tr>
+<td align="center" width="50%">
+<img src="output/bonsai-growth.gif" width="280" alt="git-bonsai of alexzjss" />
+</td>
+<td align="center" width="50%">
+<img src="https://skillicons.dev/icons?i=py,java,ts,js,nodejs,fastapi,postgres,mysql,docker,git,github,linux,figma&perline=4" alt="Tech stack" />
+</td>
+</tr>
+</table>
 
 <br>
 
-## 💻 Stack
+## Projects
 
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=py,java,ts,js,nodejs,fastapi,postgres,mysql,docker,git,github,linux,figma" alt="Stack de tecnologias" />
-
-</div>
-
-<br>
-
-## 🏢 Experiência
-
-| Organização | Papel | Período |
+| Project | What it does | Stack |
 |---|---|---|
-| **Síntese Jr** | Trainee de Backend Development \| B2B Consultative Sales | set 2026 – presente |
-| **PET-SI EACH-USP** | PET Scholar | ago 2026 – presente |
-| **Universidade de São Paulo** (SAEG, orient. Prof. Dr. Marcos Lordello Chaim) | Undergraduate Research Assistant — Software Testing & Debugging (Jaguar 2 / Defects4J) | jul 2026 – presente |
-| **Each In The Shell (EITS)** | Cybersecurity Researcher | set 2026 – presente |
-| **Hype - Data & AI** | Data & AI Researcher | mai 2026 – presente |
-| **DASI USP** | IT Project Coordinator | mar 2026 – presente |
-| **USPCodeLab Leste** | Web Development Project Manager | jun 2026 – presente |
-| **Semana de Sistemas de Informação** | Organizing Committee (Patrocínio/Financeiro e Criativo/Comunicação) | mar 2026 – presente |
-| **Conway USP** (Gamedev e Comp. Gráfica) | Design & Communications Lead *(ago 2026–presente)* · Project Organizer *(abr–ago 2026)* | abr 2026 – presente |
+| [DaSIboard](https://github.com/alexzjss/dasiboard-omg) | Academic workspace for USP Information Systems students — task kanban, grades & attendance tracking, event calendar, collaborative study rooms, achievements, curriculum flowchart. Used by 700+ students. | TypeScript · PostgreSQL · Docker |
+| [ModaLoop](https://github.com/alexzjss/modaloop) | Platform connecting users to used-clothing collection points, promoting conscious textile disposal via geolocation. | TypeScript |
+| [AetherVTT](https://github.com/alexzjss/rpg) | Desktop tactical card-based RPG — elemental bonding system, LIFO combat stack, fog of war, multi-window IPC. | Tauri · React · TypeScript |
+| [algoriCmos](https://github.com/alexzjss/algoriCmos) | Random exercise generator for studying C, algorithm analysis and data structures. | Python |
+| [Portfolio](https://github.com/alexzjss/website) | Personal portfolio with projects and background. | HTML |
+
+**Research**
+
+- **Benchmark Selection for Software Testing & Debugging** — Undergraduate research (PUB/USP, SAEG group, advised by Prof. Dr. Marcos Lordello Chaim). Evaluating 11 Java benchmarks for spectrum-based fault localization and automated program repair; using Jaguar 2 to collect coverage data on Defects4J (875 defective versions, 17 projects). Target: publication at SICUSP.
+- **TrendSurfer — Itaú Quant AI Challenge** — Long/short momentum trading strategy on IBOV constituents built with a 3-person team; feature engineering, signal design, and backtesting in Python.
 
 <br>
 
-## 🏆 Certificações & Conquistas
+## Certifications & Achievements
 
-- 🥇 Campeão do Hackfools 2026
-- 🥇 1º Lugar — Hackathon de Construção de Agentes de IA
-- 🚩 Campeão Capture The Flag
-- 🥉 OBMEP — Medalhista de Bronze
-- Claude 101 · Introdução ao Linux · AWS Educate — Introduction to Generative AI · Conceitos de Gamedev · Prototipagem em Figma
+- 🥇 Hackfools 2026 Champion
+- 🥇 1st Place — AI Agent Building Hackathon
+- 🚩 Capture The Flag Champion
+- 🥉 OBMEP — Bronze Medalist
+- Claude 101 · Intro to Linux · AWS Educate — Intro to Generative AI · Gamedev Concepts · Figma Prototyping
 
 <br>
 
-## 📫 Contato
+## Contact
 
 <div align="center">
 
@@ -78,5 +59,3 @@ Interesses principais: Engenharia de Software, Backend, Engenharia de Dados, Mac
 [![Gmail](https://img.shields.io/badge/-benalex511%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:benalex511@gmail.com)
 
 </div>
-
-<br>
