@@ -1,35 +1,117 @@
 <div align="center">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/header-v1.svg"/><img src="assets/header-v1.svg" alt="Alex de Jesus Santana"/></picture>
+# Alex Santana
 
-<a href="https://alexzjss.github.io/website/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/PORTF%C3%93LIO-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/PORTF%C3%93LIO-ffffff?style=flat-square&logoColor=000000" alt="Portfólio"/></picture></a>
-<a href="https://github.com/alexzjss"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GITHUB-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/GITHUB-ffffff?style=flat-square&logo=github&logoColor=000000" alt="GitHub"/></picture></a>
-<a href="https://www.linkedin.com/in/alex-jsz/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000" alt="LinkedIn"/></picture></a>
+### Software & Data Engineer · Information Systems @ USP
+`Python` · `Java` · `TypeScript` · `SQL` · `Machine Learning`
+
+São Paulo, SP — Brasil
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alex-jsz)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white)](https://website-cyan-onewkdbdk7vs0.vercel.app/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:benalex511@gmail.com)
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — whoami"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/whoami.svg"/><img src="assets/whoami.svg" alt="Sobre Alex"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — mapa do sistema"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/ecosystem.svg"/><img src="assets/ecosystem.svg" alt="Mapa do sistema"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="03 — projetos"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="6 projetos"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/s04.svg" alt="04 — telemetria"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/telemetry.svg"/><img src="assets/telemetry.svg" alt="Telemetria de desenvolvimento"/></picture>
+<br>
+
+## 🌳 git-bonsai
 
 <div align="center">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=alexzjss&show_icons=true&hide_border=true&title_color=ffffff&text_color=dddddd&icon_color=ffffff&bg_color=00000000"/><img src="https://github-readme-stats.vercel.app/api?username=alexzjss&show_icons=true&hide_border=true&title_color=111111&text_color=222222&icon_color=111111&bg_color=00000000" width="48%" alt="Estatísticas do GitHub"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&hide_border=true&title_color=ffffff&text_color=dddddd&bg_color=00000000"/><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexzjss&layout=compact&hide_border=true&title_color=111111&text_color=222222&bg_color=00000000" width="48%" alt="Linguagens mais usadas"/></picture>
+<img src="output/bonsai-growth.gif" width="384" alt="git-bonsai de alexzjss" />
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=alexzjss&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area_color=ffffff&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY"/><img src="https://github-readme-activity-graph.vercel.app/graph?username=alexzjss&bg_color=00000000&color=000000&line=000000&point=000000&area_color=000000&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="Gráfico de contribuições no GitHub"/></picture>
+<sub>Uma árvore procedural crescida a partir do meu histórico de commits — determinística, única para o meu usuário.</sub>
+
+[![grown with git-bonsai](https://img.shields.io/badge/🌳_grown_with-git--bonsai-2ea44f?style=flat-square)](https://github.com/egorthinks/git-bonsai)
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/><img src="assets/s05.svg" alt="05 — a rota"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/timeline.svg"/><img src="assets/timeline.svg" alt="Linha do tempo"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/><img src="assets/s06.svg" alt="06 — stack"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"/><img src="assets/stack.svg" alt="Stack técnica"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"/><img src="assets/footer.svg" alt="Status atual"/></picture>
+> A imagem acima é gerada automaticamente pelo workflow em `.github/workflows/bonsai.yml` — veja as instruções de instalação no fim deste README.
 
-<!-- uma imagem responsiva por seção; sem renderização duplicada claro/escuro -->
+<br>
+
+## 🧭 Sobre mim
+
+Estudante de **Sistemas de Informação** na **Universidade de São Paulo (USP)**, focado em Engenharia de Software, Backend, Dados e Inteligência Artificial.
+
+Combino desenvolvimento de software, pesquisa acadêmica e projetos reais de tecnologia. Atualmente pesquiso **Software Testing & Debugging** com Java e Apache Maven, e participo de iniciativas de **Data Science e IA** com Python. Dentro da comunidade universitária, contribuo com projetos de TI — incluindo o **DaSIboard**, plataforma acadêmica usada por mais de 700 estudantes de Sistemas de Informação.
+
+Interesses principais: Engenharia de Software, Backend, Engenharia de Dados, Machine Learning e IA — especialmente problemas envolvendo sistemas, dados, automação e soluções escaláveis.
+
+<br>
+
+## 💻 Stack
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=py,java,ts,js,nodejs,fastapi,postgres,mysql,docker,git,github,linux,figma" alt="Stack de tecnologias" />
+
+</div>
+
+<br>
+
+## 🏢 Experiência
+
+| Organização | Papel | Período |
+|---|---|---|
+| **Síntese Jr** | Trainee de Backend Development \| B2B Consultative Sales | set 2026 – presente |
+| **PET-SI EACH-USP** | PET Scholar | ago 2026 – presente |
+| **Universidade de São Paulo** (SAEG, orient. Prof. Dr. Marcos Lordello Chaim) | Undergraduate Research Assistant — Software Testing & Debugging (Jaguar 2 / Defects4J) | jul 2026 – presente |
+| **Each In The Shell (EITS)** | Cybersecurity Researcher | set 2026 – presente |
+| **Hype - Data & AI** | Data & AI Researcher | mai 2026 – presente |
+| **DASI USP** | IT Project Coordinator | mar 2026 – presente |
+| **USPCodeLab Leste** | Web Development Project Manager | jun 2026 – presente |
+| **Semana de Sistemas de Informação** | Organizing Committee (Patrocínio/Financeiro e Criativo/Comunicação) | mar 2026 – presente |
+| **Conway USP** (Gamedev e Comp. Gráfica) | Design & Communications Lead *(ago 2026–presente)* · Project Organizer *(abr–ago 2026)* | abr 2026 – presente |
+
+<br>
+
+## 🏆 Certificações & Conquistas
+
+- 🥇 Campeão do Hackfools 2026
+- 🥇 1º Lugar — Hackathon de Construção de Agentes de IA
+- 🚩 Campeão Capture The Flag
+- 🥉 OBMEP — Medalhista de Bronze
+- Claude 101 · Introdução ao Linux · AWS Educate — Introduction to Generative AI · Conceitos de Gamedev · Prototipagem em Figma
+
+<br>
+
+## 📫 Contato
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/-alex--jsz-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alex-jsz)
+[![Portfolio](https://img.shields.io/badge/-portfolio-000000?style=flat-square&logo=vercel&logoColor=white)](https://website-cyan-onewkdbdk7vs0.vercel.app/)
+[![Gmail](https://img.shields.io/badge/-benalex511%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:benalex511@gmail.com)
+
+</div>
+
+<br>
+
+---
+
+<details>
+<summary>⚙️ Como instalar o git-bonsai (para reproduzir este README)</summary>
+
+Crie `.github/workflows/bonsai.yml` no repositório de perfil (o repositório com o mesmo nome do seu usuário):
+
+```yaml
+name: bonsai
+on:
+  schedule:
+    - cron: '0 3 * * *'   # recresce diariamente
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  grow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: egorthinks/git-bonsai@v1
+```
+
+Isso gera `output/bonsai-growth.gif` (e `bonsai.svg` / `bonsai.png` / `bonsai.gif`), que é exatamente o caminho referenciado na seção **git-bonsai** acima.
+
+</details>
