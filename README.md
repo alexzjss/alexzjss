@@ -30,7 +30,7 @@ São Paulo, Brazil
 | [DaSIboard](https://github.com/alexzjss/dasiboard-omg) | Academic workspace for USP Information Systems students — task kanban, grades & attendance tracking, event calendar, collaborative study rooms, achievements, curriculum flowchart. Used by 700+ students. | TypeScript · PostgreSQL · Docker |
 | [ModaLoop](https://github.com/alexzjss/modaloop) | Platform connecting users to used-clothing collection points, promoting conscious textile disposal via geolocation. | TypeScript |
 | [AetherVTT](https://github.com/alexzjss/rpg) | Desktop tactical card-based RPG — elemental bonding system, LIFO combat stack, fog of war, multi-window IPC. | Tauri · React · TypeScript |
-| [algoriCmos](https://github.com/alexzjss/algoriCmos) | Random exercise generator for studying C, algorithm analysis and data structures. | Python |
+| [jflp](https://github.com/alexzjss/jflp) | A modular experimental framework for evaluating Spectrum-Based Fault Localization techniques on Java software. | Python |
 | [Portfolio](https://github.com/alexzjss/website) | Personal portfolio with projects and background. | HTML |
 
 **Research**
