@@ -1,11 +1,8 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <img src="assets/header-light.svg" width="100%" alt="$ whoami — Alex Santana, software & data engineer · Information Systems @ USP">
-</picture>
+<img src="assets/header.svg" width="100%" alt="$ whoami — Alex Santana, software &amp; data engineer · Information Systems @ USP">
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-alex--jsz-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=0d1117)](https://www.linkedin.com/in/alex-jsz/) [![Portfolio](https://img.shields.io/badge/portfolio-alexjsz.vercel.app-3fb950?style=flat-square&logo=vercel&logoColor=white&labelColor=0d1117)](https://alexjsz.vercel.app/) [![Email](https://img.shields.io/badge/mail-benalex511@gmail.com-d2a8ff?style=flat-square&logo=gmail&logoColor=white&labelColor=0d1117)](mailto:benalex511@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/linkedin-alex--jsz-ffb000?style=flat-square&logo=linkedin&logoColor=ffb000&labelColor=120d05)](https://www.linkedin.com/in/alex-jsz/) [![Portfolio](https://img.shields.io/badge/portfolio-alexjsz.vercel.app-ffb000?style=flat-square&logo=vercel&logoColor=ffb000&labelColor=120d05)](https://alexjsz.vercel.app/) [![Email](https://img.shields.io/badge/mail-benalex511@gmail.com-ffb000?style=flat-square&logo=gmail&logoColor=ffb000&labelColor=120d05)](mailto:benalex511@gmail.com)
 
 </div>
 
@@ -67,6 +64,10 @@ That work runs on large-scale Java/Maven test execution, automated in [JFLP Stud
 ### `$ grep -c win ~/.achievements`
 
 🏆 Hackfools 2026 champion &nbsp;·&nbsp; 🤖 1st place, AI Agent Building Hackathon &nbsp;·&nbsp; 🚩 CTF champion &nbsp;·&nbsp; 🥉 OBMEP bronze medal
+
+### `$ git log --graph`
+
+<img src="https://raw.githubusercontent.com/alexzjss/alexzjss/snake/snake.svg" width="100%" alt="Snake eating alexzjss's contribution graph">
 
 <div align="center">
 <br>
