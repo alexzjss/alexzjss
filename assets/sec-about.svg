@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 40" width="880" height="40" role="img" aria-label="$ cat about.md">
+<style>text{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:16px;font-weight:600;white-space:pre}</style>
+<rect x="0.5" y="0.5" width="879" height="39" rx="8" fill="#1a1408" stroke="#6b4a00"/>
+<text x="16" y="26"><tspan fill="#a87a1c">$ </tspan><tspan fill="#ffb000">cat about.md</tspan></text>
+<rect x="856" y="14" width="9" height="14" fill="#ffb000"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
+</svg>
