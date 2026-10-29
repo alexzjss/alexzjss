@@ -9,19 +9,21 @@
 ### `$ cat about.md`
 
 Information Systems undergrad at the **University of São Paulo**, working where **software engineering meets data**.
-I build backend systems and full-stack products that people actually use, and I do research on **software testing & debugging**.
-I spend the rest of my time on ML/AI, security CTFs and game systems.
+I build backend systems and full-stack products that people actually use, from academic tooling for 700+ students to a safety-aware route planner for São Paulo, and I do research on **software testing & debugging**.
+I spend the rest of my time on geospatial data, ML/AI, security CTFs and game systems.
 
 ### `$ ls -l ~/projects`
 
 | | Project | What it is | Stack |
 |:-:|---|---|---|
-| ★ | **[DaSIboard](https://github.com/alexzjss/dasiboard-omg)** · [live](https://dasiboard.vercel.app/) | All-in-one academic workspace for USP Information Systems students: kanban, grades & attendance, calendar, study rooms, curriculum flowchart. **700+ students**, 500+ commits, built with a team. | TypeScript · React · Supabase/Postgres · Vercel |
+| ★ | **[DaSIboard](https://github.com/alexzjss/dasiboard-omg)** · [live](https://dasiboard.online/) | All-in-one academic workspace for USP Information Systems students: kanban, grades & attendance, calendar, study rooms, curriculum flowchart. **700+ students**, 500+ commits, built with a team. | TypeScript · React · Supabase/Postgres · Vercel |
+| ★ | **[SampaNav](https://github.com/alexzjss/SampaNav)** · [live](https://sampanav.vercel.app) | Walking, cycling and driving routes in São Paulo that trade travel time against exposure to crimes recorded by SSP-SP. Fastest / Balanced / Safest profiles, hex-grid risk heatmap by time of day, turn-by-turn in Portuguese, GPX export and an installable PWA. Monthly automated data refresh, 200+ tests. | Python · FastAPI · igraph · H3 · OSMnx · MapLibre |
 | ★ | **[RPG Codex VTT](https://github.com/alexzjss/vttrpg)** · [live](https://vat-gules.vercel.app) | Virtual tabletop with tactical scenes, turn-based combat, a visual ability-graph editor with simulation, offline-first storage and versioned online campaign sync with GM review. | TypeScript · React · Supabase · IndexedDB |
 | ◆ | **[JFLP Studio](https://github.com/alexzjss/jflp)** | Experimental framework for **Spectrum-Based Fault Localization**: drives Maven + Jaguar 2 over Defects4J / Bugs.jar with a resumable run queue, immutable runs and dataset export. | Python · Maven · Jaguar 2 |
 | ◆ | **TrendSurfer** · <sub>private</sub> | Itaú Quant AI Challenge, team of 3: long/short momentum strategy on the IBOV universe, with a point-in-time universe, corporate-action adjustments and no look-ahead or survivorship bias. | Python · Polars · DuckDB · Streamlit |
 | ▸ | **[vat](https://github.com/alexzjss/vat)** | JRPG prototype with real-time ATB combat, elemental reactions, status effects, dungeons, bosses and a bestiary, in typed GDScript. | Godot 4 · GDScript |
 | ▸ | **[ICNDY](https://github.com/alexzjss/ICNDY)** | Offline-first Android app for timing the *Cindy* CrossFit workout: tap-to-count rounds, PR pace, progress charts. | TypeScript · React Native · Expo |
+| ▸ | **[algoriCmos](https://github.com/alexzjss/algoriCmos)** | Random exercise generator in Portuguese for studying C programming, algorithm analysis and data structures. | Python |
 
 <sub>★ flagship &nbsp;·&nbsp; ◆ research & data &nbsp;·&nbsp; ▸ side builds</sub>
 
