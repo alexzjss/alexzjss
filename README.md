@@ -10,10 +10,10 @@
 
 Information Systems undergrad at the **University of São Paulo**.
 
-- `focus   ` &nbsp;&nbsp;&nbsp;&nbsp;**software engineering meets data**: backend systems and full-stack products people actually use
-- `built   ` &nbsp;&nbsp;&nbsp;&nbsp;academic tooling for **700+ students** · a safety-aware route planner for **São Paulo**
+- `focus   ` **software engineering meets data**: backend systems and full-stack products people actually use
+- `built   ` academic tooling for **700+ students** · a safety-aware route planner for **São Paulo**
 - `research` **software testing & debugging**
-- `also    ` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geospatial data · ML/AI · security CTFs · game systems
+- `also    ` geospatial data · ML/AI · security CTFs · game systems
 
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
@@ -33,10 +33,10 @@ Information Systems undergrad at the **University of São Paulo**.
 + [SAEG · PUB/USP]  Data Generation for Software Testing & Debugging Experimentation
 ```
 
-- `group   ` &nbsp;&nbsp;&nbsp;&nbsp;Software Analysis & Experimentation Group (SAEG), advised by **Prof. Dr. Marcos Lordello Chaim**
-- `method  ` &nbsp;&nbsp;control-flow coverage with **Jaguar 2** on the **Defects4J** benchmark
-- `scale   ` &nbsp;&nbsp;&nbsp;&nbsp;875 real faulty versions from 17 projects, via large-scale Java/Maven test execution
-- `goal    ` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data for fault-localization experiments, automated in [JFLP Studio](https://github.com/alexzjss/jflp)
+- `group   ` Software Analysis & Experimentation Group (SAEG), advised by **Prof. Dr. Marcos Lordello Chaim**
+- `method  ` control-flow coverage with **Jaguar 2** on the **Defects4J** benchmark
+- `scale   ` 875 real faulty versions from 17 projects, via large-scale Java/Maven test execution
+- `goal    ` data for fault-localization experiments, automated in [JFLP Studio](https://github.com/alexzjss/jflp)
 
 <img src="assets/sec-roles.svg" width="100%" alt="$ history | grep -i role">
 
