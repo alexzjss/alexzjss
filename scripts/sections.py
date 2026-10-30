@@ -19,7 +19,7 @@ SECTIONS = {
     "roles":        ("history | grep -i role", "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8"),
     "stack":        ("tree --grow ~/stack",    "#1f0d0c", "#8a3a35", "#ff7b72", "#b0524c"),
     "achievements": ("grep -c win ~/.achievements", "#1d0c15", "#8a3a68", "#f778ba", "#b0518a"),
-    "gitlog":       ("git log --graph",        "#0a1220", "#1f4f8a", "#79c0ff", "#4f86c0"),
+    "contributions": ("snk ./contributions",        "#0a1220", "#1f4f8a", "#79c0ff", "#4f86c0"),
 }
 
 

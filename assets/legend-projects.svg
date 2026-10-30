@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 309 24" width="309" height="24" role="img" aria-label="Legend: flagship, research, side builds">
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}</style>
+<text x="0" y="17"><tspan fill="#ffb000">★</tspan><tspan fill="#8b949e"> flagship</tspan></text><text x="102.4" y="17"><tspan fill="#5fd38d">◆</tspan><tspan fill="#8b949e"> research</tspan></text><text x="204.8" y="17"><tspan fill="#8b949e">▸</tspan><tspan fill="#8b949e"> side builds</tspan></text>
+</svg>

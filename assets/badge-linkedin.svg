@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 34" width="189" height="34" role="img" aria-label="linkedin: alex-jsz">
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:600}</style>
+<rect x="0.5" y="0.5" width="188" height="33" rx="8" fill="#1a1408" stroke="#6b4a00"/>
+<g transform="translate(14 8.0)" fill="none" stroke="#ffb000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="16" height="16" rx="3"/><path d="M5.5 8v5M5.5 5.2v.1M9 13V8m0 2.2c0-1.4 1-2.2 2.2-2.2s1.8.8 1.8 2.2V13"/></g>
+<text y="21.5"><tspan x="42" fill="#a87a1c" textLength="62.4">linkedin</tspan><tspan x="112.4" fill="#ffb000" textLength="62.4">alex-jsz</tspan></text>
+</svg>

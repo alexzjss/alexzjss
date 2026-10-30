@@ -2,36 +2,30 @@
 
 <img src="assets/header.svg" width="100%" alt="$ whoami — Alex Santana, software &amp; data engineer · Information Systems @ USP">
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-alex--jsz-ffb000?style=flat-square&logo=linkedin&logoColor=ffb000&labelColor=120d05)](https://www.linkedin.com/in/alex-jsz/) [![Portfolio](https://img.shields.io/badge/portfolio-alexjsz.vercel.app-ffb000?style=flat-square&logo=vercel&logoColor=ffb000&labelColor=120d05)](https://alexjsz.vercel.app/) [![Email](https://img.shields.io/badge/mail-benalex511@gmail.com-ffb000?style=flat-square&logo=gmail&logoColor=ffb000&labelColor=120d05)](mailto:benalex511@gmail.com)
+<a href="https://www.linkedin.com/in/alex-jsz/"><img src="assets/badge-linkedin.svg" height="34" alt="LinkedIn: alex-jsz"></a>&nbsp;<a href="https://alexjsz.vercel.app/"><img src="assets/badge-portfolio.svg" height="34" alt="Portfolio: alexjsz.vercel.app"></a>&nbsp;<a href="mailto:benalex511@gmail.com"><img src="assets/badge-mail.svg" height="34" alt="Email: benalex511@gmail.com"></a>
 
 </div>
 
 <img src="assets/sec-about.svg" width="100%" alt="$ cat about.md">
 
-Information Systems undergrad at the **University of São Paulo**, working where **software engineering meets data**.
-I build backend systems and full-stack products that people actually use, from academic tooling for 700+ students to a safety-aware route planner for São Paulo, and I do research on **software testing & debugging**.
-I spend the rest of my time on geospatial data, ML/AI, security CTFs and game systems.
+Information Systems undergrad at the **University of São Paulo**.
+
+- `focus   ` &nbsp;&nbsp;&nbsp;&nbsp;**software engineering meets data**: backend systems and full-stack products people actually use
+- `built   ` &nbsp;&nbsp;&nbsp;&nbsp;academic tooling for **700+ students** · a safety-aware route planner for **São Paulo**
+- `research` **software testing & debugging**
+- `also    ` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geospatial data · ML/AI · security CTFs · game systems
 
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
-<p align="center">
-<a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="65%" alt="dasiboard"></a>
-<a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="32%" alt="sampanav"></a>
-</p>
+<p align="center"><img src="assets/legend-projects.svg" alt="Legend: flagship, research, side builds"></p>
 
-<p align="center">
-<a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32%" alt="jflp"></a>
-<a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32%" alt="modaloop"></a>
-<a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="32%" alt="vat"></a>
-</p>
+<p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="33%" alt="sampanav"></a></p>
 
-<p align="center">
-<a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32%" alt="icndy"></a>
-<a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="32%" alt="website"></a>
-<a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32%" alt="eco-fruta"></a>
-</p>
+<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="33%" alt="jflp"></a><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="33%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="33%" alt="vat"></a></p>
 
-<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexzjss.github.io/website/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> &nbsp;·&nbsp; ★ flagship &nbsp;·&nbsp; ◆ research &nbsp;·&nbsp; ▸ side builds</sub></p>
+<p align="center"><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="33%" alt="icndy"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="33%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="33%" alt="eco-fruta"></a></p>
+
+<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexzjss.github.io/website/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a></sub></p>
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -39,19 +33,14 @@ I spend the rest of my time on geospatial data, ML/AI, security CTFs and game sy
 + [SAEG · PUB/USP]  Data Generation for Software Testing & Debugging Experimentation
 ```
 
-Undergraduate research with the **Software Analysis & Experimentation Group**, advised by **Prof. Dr. Marcos Lordello Chaim**.
-I collect control-flow coverage with **Jaguar 2** on the **Defects4J** benchmark (875 real faulty versions from 17 projects) to generate data for fault-localization experiments.
-That work runs on large-scale Java/Maven test execution, automated in [JFLP Studio](https://github.com/alexzjss/jflp).
+- `group   ` &nbsp;&nbsp;&nbsp;&nbsp;Software Analysis & Experimentation Group (SAEG), advised by **Prof. Dr. Marcos Lordello Chaim**
+- `method  ` &nbsp;&nbsp;control-flow coverage with **Jaguar 2** on the **Defects4J** benchmark
+- `scale   ` &nbsp;&nbsp;&nbsp;&nbsp;875 real faulty versions from 17 projects, via large-scale Java/Maven test execution
+- `goal    ` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data for fault-localization experiments, automated in [JFLP Studio](https://github.com/alexzjss/jflp)
 
 <img src="assets/sec-roles.svg" width="100%" alt="$ history | grep -i role">
 
-| Since | Role | Where |
-|---|---|---|
-| `2026-10` | Claude Campus Ambassador | THE·TEAM |
-| `2026-09` | Backend Development Trainee | Síntese Jr. *(IT consulting junior enterprise)* |
-| `2026-07` | Undergraduate Researcher | SAEG · USP |
-| `2026-05` | Data & AI Researcher | Hype — Data & AI |
-| `2026-03` | IT Project Coordinator | DASI USP |
+<img src="assets/roles.svg" width="100%" alt="Roles, newest first: 2026-10 Claude Campus Ambassador at THE·TEAM; 2026-09 Backend Development Trainee at Síntese Jr.; 2026-07 Undergraduate Researcher at SAEG · USP; 2026-05 Data & AI Researcher at Hype — Data & AI; 2026-03 IT Project Coordinator at DASI USP">
 
 <sub>also: PET-SI EACH-USP (scholar) · Each In The Shell (cybersecurity) · USPCodeLab Leste (web PM) · Conway USP (gamedev, design lead) · Semana de SI (organizing committee)</sub>
 
@@ -78,9 +67,9 @@ That work runs on large-scale Java/Maven test execution, automated in [JFLP Stud
 
 <img src="assets/sec-achievements.svg" width="100%" alt="$ grep -c win ~/.achievements">
 
-🏆 Hackfools 2026 champion &nbsp;·&nbsp; 🤖 1st place, AI Agent Building Hackathon &nbsp;·&nbsp; 🚩 CTF champion &nbsp;·&nbsp; 🥉 OBMEP bronze medal
+<img src="assets/achievements.svg" width="100%" alt="Achievements: Hackfools 2026 champion; 1st place, AI Agent Building Hackathon; CTF champion; OBMEP bronze medal">
 
-<img src="assets/sec-gitlog.svg" width="100%" alt="$ git log --graph">
+<img src="assets/sec-contributions.svg" width="100%" alt="$ snk ./contributions">
 
 <img src="https://raw.githubusercontent.com/alexzjss/alexzjss/snake/snake.svg" width="100%" alt="Snake eating alexzjss's contribution graph">
 

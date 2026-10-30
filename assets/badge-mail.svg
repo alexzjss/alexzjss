@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 34" width="251" height="34" role="img" aria-label="mail: benalex511@gmail.com">
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:600}</style>
+<rect x="0.5" y="0.5" width="250" height="33" rx="8" fill="#1a1408" stroke="#6b4a00"/>
+<g transform="translate(14 8.0)" fill="none" stroke="#ffb000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="16" height="12" rx="2"/><path d="M1.5 4.5L9 10l7.5-5.5"/></g>
+<text y="21.5"><tspan x="42" fill="#a87a1c" textLength="31.2">mail</tspan><tspan x="81.2" fill="#ffb000" textLength="156.0">benalex511@gmail.com</tspan></text>
+</svg>
