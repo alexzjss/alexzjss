@@ -9,7 +9,7 @@ from xml.sax.saxutils import escape
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-TW, H, M = 200, 104, 10   # M: transparent margin, so four tiles side by side leave a 20px gutter
+TW, H, M = 205, 104, 10   # M: transparent margin, so four tiles side by side leave a 20px gutter
 ACCENT, BG, BORDER = "#f778ba", "#1d0c15", "#8a3a68"
 
 # 24x24 stroke glyphs
@@ -20,18 +20,20 @@ MEDAL = '<circle cx="12" cy="15" r="5"/><path d="M8.5 3L12 10l3.5-7M12 12.5v5"/>
 
 # slug: (glyph, rank, name lines, linked)
 ACHIEVEMENTS = {
-    "hackfools": (TROPHY, "CHAMPION", ["Hackfools 2026"], False),
+    "hackfools": (TROPHY, "1ST PLACE", ["Hackfools 2026", "USPCodeLab"], True),
     "agents": (BOT, "1ST PLACE", ["AI Agent Building", "Hackathon"], True),
     "ctf": (FLAG, "CHAMPION", ["Capture the Flag"], True),
     "obmep": (MEDAL, "BRONZE MEDAL", ["OBMEP 2025", "State award · BA"], True),
 }
 
 
-def build(glyph, rank, name, linked):
+def build(glyph, rank, name, linked, crop_l=False, crop_r=False):
+    x0 = M if crop_l else 0
+    vw = TW + 2 * M - x0 - (M if crop_r else 0)
     lines = "".join(f'<text x="18" y="{66 + j * 19}" class="n">{escape(l)}</text>' for j, l in enumerate(name))
     arrow = f'<text x="{TW - 18}" y="32" class="t" text-anchor="end">↗</text>' if linked else ""
     label = f"{rank.title()}, {' '.join(name)}"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {TW + 2 * M} {H + 2 * M}" width="{TW + 2 * M}" height="{H + 2 * M}" role="img" aria-label="{escape(label)}">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(label)}">
 <style>.t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;font-weight:600;letter-spacing:.08em;fill:{ACCENT}}}.n{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;fill:#e6edf3}}</style>
 <g transform="translate({M} {M})"><rect x="0.5" y="0.5" width="{TW - 1}" height="{H - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>
 <g transform="translate(16 12) scale(1.25)" fill="none" stroke="{ACCENT}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{glyph}</g>
@@ -41,7 +43,9 @@ def build(glyph, rank, name, linked):
 
 
 if __name__ == "__main__":
-    for slug, spec in ACHIEVEMENTS.items():
+    n = len(ACHIEVEMENTS)
+    for i, (slug, spec) in enumerate(ACHIEVEMENTS.items()):
         path = OUT / f"achievement-{slug}.svg"
-        path.write_text(build(*spec), encoding="utf-8")
-        print("wrote", path)
+        path.write_text(build(*spec, crop_l=i == 0, crop_r=i == n - 1), encoding="utf-8")
+        vw = TW + 2 * M - (M if i == 0 else 0) - (M if i == n - 1 else 0)
+        print("wrote", path, f"width={vw / (n * TW + (n - 1) * 2 * M) * 100 - 0.1:.1f}%")

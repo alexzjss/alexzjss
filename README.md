@@ -19,13 +19,13 @@ Information Systems undergrad at the **University of São Paulo**.
 
 <p align="center"><img src="assets/legend-projects.svg" alt="Legend: flagship, research, side builds"></p>
 
-<p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="33%" alt="sampanav"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="32.9%" alt="sampanav"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="33%" alt="jflp"></a><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="33%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="33%" alt="vat"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="34.0%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="32.9%" alt="vat"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="33%" alt="icndy"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="33%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="33%" alt="eco-fruta"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="34.0%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
 
-<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexzjss.github.io/website/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a></sub></p>
+<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a></sub></p>
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -53,21 +53,14 @@ Information Systems undergrad at the **University of São Paulo**.
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<sub><code>languages</code></sub><br>
-<img src="https://skillicons.dev/icons?i=py,java,ts,js,cpp&perline=10" alt="Python, Java, TypeScript, JavaScript, C++"><br>
-<sub><code>frontend</code></sub><br>
-<img src="https://skillicons.dev/icons?i=react,nextjs,vite,tailwind,html,css&perline=10" alt="React, Next.js, Vite, Tailwind, HTML, CSS"><br>
-<sub><code>backend &amp; data</code></sub><br>
-<img src="https://skillicons.dev/icons?i=nodejs,fastapi,postgres,supabase,sqlite&perline=10" alt="Node.js, FastAPI, PostgreSQL, Supabase, SQLite"><br>
-<sub><code>tools</code></sub><br>
-<img src="https://skillicons.dev/icons?i=docker,git,linux,githubactions,maven,godot,vercel&perline=10" alt="Docker, Git, Linux, GitHub Actions, Maven, Godot, Vercel">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite. Tools: Docker, Git, Linux, GitHub Actions, Maven, Godot, Vercel.">
 </td>
 </tr>
 </table>
 
 <img src="assets/sec-achievements.svg" width="100%" alt="$ grep -c win ~/.achievements">
 
-<p align="center"><img src="assets/achievement-hackfools.svg" width="24.5%" alt="Hackfools 2026 champion"><a href="https://www.instagram.com/p/DYkP8RnkaMo/?img_index=5"><img src="assets/achievement-agents.svg" width="24.5%" alt="1st place, AI Agent Building Hackathon"></a><a href="https://www.instagram.com/p/DcwirCMmOkN/?img_index=2"><img src="assets/achievement-ctf.svg" width="24.5%" alt="Capture the Flag champion"></a><a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosEstadualPorNivel-BA.3.do.htm"><img src="assets/achievement-obmep.svg" width="24.5%" alt="OBMEP 2025 state bronze medal, Bahia"></a></p>
+<p align="center"><a href="https://www.instagram.com/uspcodelab/"><img src="assets/achievement-hackfools.svg" width="24.3%" alt="Hackfools 2026, 1st place (USPCodeLab)"></a><a href="https://www.instagram.com/p/DYkP8RnkaMo/?img_index=5"><img src="assets/achievement-agents.svg" width="25.5%" alt="1st place, AI Agent Building Hackathon"></a><a href="https://www.instagram.com/p/DcwirCMmOkN/?img_index=2"><img src="assets/achievement-ctf.svg" width="25.5%" alt="Capture the Flag champion"></a><a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosEstadualPorNivel-BA.3.do.htm"><img src="assets/achievement-obmep.svg" width="24.3%" alt="OBMEP 2025 state bronze medal, Bahia"></a></p>
 
 <img src="assets/sec-contributions.svg" width="100%" alt="$ snk ./contributions">
 
@@ -75,5 +68,7 @@ Information Systems undergrad at the **University of São Paulo**.
 
 <div align="center">
 <br>
-<sub><code>$ exit</code> &nbsp;—&nbsp; <a href="https://www.linkedin.com/in/alex-jsz/">linkedin</a> · <a href="https://alexjsz.vercel.app/">portfolio</a> · <a href="mailto:benalex511@gmail.com">email</a></sub>
+<sub><code>$ exit</code></sub>
+<br><br>
+<a href="https://www.linkedin.com/in/alex-jsz/"><img src="assets/badge-linkedin.svg" height="28" alt="LinkedIn: alex-jsz"></a>&nbsp;<a href="https://alexjsz.vercel.app/"><img src="assets/badge-portfolio.svg" height="28" alt="Portfolio: alexjsz.vercel.app"></a>&nbsp;<a href="mailto:benalex511@gmail.com"><img src="assets/badge-mail.svg" height="28" alt="Email: benalex511@gmail.com"></a>
 </div>

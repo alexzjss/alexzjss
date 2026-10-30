@@ -54,15 +54,19 @@ PROJECTS = {
         "Expo · React Native · EAS", "#ff7b72", NARROW),
     "website": (
         "▸ WEB", "website",
-        "Bilingual (PT/EN) personal portfolio, fully static, with shared light and dark design tokens.",
+        "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
         ["react", "ts", "vite", "css", "vercel"],
-        "", "#79c0ff", NARROW),
+        "PT/EN · SPA · design tokens", "#79c0ff", NARROW),
     "eco-fruta": (
         "▸ WEB", "eco-fruta",
-        "Next.js web app deployed on Vercel.",
-        ["nextjs", "ts", "tailwind", "vercel"],
-        "", "#a5d86e", NARROW),
+        "Virtual organic market in PT-BR: fruit, vegetable and greens catalog, producer profiles, cart and Mercado Pago checkout.",
+        ["nextjs", "react", "ts", "tailwind", "vercel"],
+        "Zustand · Mercado Pago · Next.js 14", "#a5d86e", NARROW),
 }
+
+# README rows, left to right. The outer edge of each row has its margin cropped away so the
+# grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
+LAYOUT = [["dasiboard", "sampanav"], ["jflp", "modaloop", "vat"], ["icndy", "website", "eco-fruta"]]
 
 _cache = {}
 
@@ -81,7 +85,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -90,7 +94,9 @@ def build(tag, title, desc, icons, chips, accent, w):
         f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w + 2 * M} {H + 2 * M}" width="{w + 2 * M}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
+    x0 = M if crop_l else 0
+    vw = w + 2 * M - x0 - (M if crop_r else 0)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
@@ -125,7 +131,11 @@ def legend():
 
 if __name__ == "__main__":
     (OUT / "legend-projects.svg").write_text(legend(), encoding="utf-8")
-    for slug, spec in PROJECTS.items():
-        path = OUT / f"card-{slug}.svg"
-        path.write_text(build(*spec), encoding="utf-8")
-        print("wrote", path)
+    for row in LAYOUT:
+        for i, slug in enumerate(row):
+            spec = PROJECTS[slug]
+            path = OUT / f"card-{slug}.svg"
+            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1), encoding="utf-8")
+            total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
+            vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
+            print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")
