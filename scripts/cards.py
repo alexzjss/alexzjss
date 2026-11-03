@@ -32,6 +32,12 @@ PROJECTS = {
         "São Paulo routes that trade travel time against recorded crime exposure (SSP-SP).",
         ["py", "fastapi", "js", "docker", "githubactions", "vercel"],
         "igraph · H3 · OSMnx · MapLibre", "#f2b530", NARROW),
+    "engrama": (
+        "★ FLAGSHIP · LOCAL AI", "Engrama",
+        "Offline tamagotchi-style companion: a deterministic body, a swappable mind (drives, spiking net, PAD affect, "
+        "traits) and a lab for replayable simulations. Local memory and LLM chat, nothing leaves the machine.",
+        ["py", "pygame", "sqlite", "ollama"],
+        "SNN · PAD affect · pygame · Ollama", "#ff9f6b", WIDE),
     "jflp": (
         "◆ RESEARCH", "JFLP Studio",
         "Spectrum-Based Fault Localization on Defects4J and Bugs.jar, with a resumable run queue.",
@@ -56,7 +62,7 @@ PROJECTS = {
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
         ["react", "ts", "vite", "css", "vercel"],
-        "PT/EN · SPA · design tokens", "#79c0ff", NARROW),
+        "PT/EN · SPA · design tokens", "#79c0ff", WIDE),
     "eco-fruta": (
         "▸ WEB", "eco-fruta",
         "Virtual organic market in PT-BR: fruit, vegetable and greens catalog, producer profiles, cart and Mercado Pago checkout.",
@@ -66,7 +72,7 @@ PROJECTS = {
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
-LAYOUT = [["dasiboard", "sampanav"], ["jflp", "modaloop", "vat"], ["icndy", "website", "eco-fruta"]]
+LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
 
 _cache = {}
 

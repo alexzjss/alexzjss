@@ -21,11 +21,13 @@ Information Systems undergrad at the **University of São Paulo**.
 
 <p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="32.9%" alt="sampanav"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="34.0%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="32.9%" alt="vat"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="66.9%" alt="engrama"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="34.0%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
 
-<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a></sub></p>
+<p align="center"><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="66.9%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
+
+<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -53,7 +55,7 @@ Information Systems undergrad at the **University of São Paulo**.
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite. Tools: Docker, Git, Linux, GitHub Actions, Maven, Godot, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama. Tools: Docker, Git, Linux, GitHub Actions, Maven, Godot, pygame, Vercel.">
 </td>
 </tr>
 </table>
