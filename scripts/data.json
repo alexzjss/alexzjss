@@ -1,0 +1,95 @@
+{
+ "dasiboard": {
+  "commits": 518,
+  "languages": {
+   "TypeScript": 1265784,
+   "CSS": 140705,
+   "PLpgSQL": 24415,
+   "JavaScript": 1216,
+   "HTML": 689
+  }
+ },
+ "sampanav": {
+  "commits": 73,
+  "languages": {
+   "Python": 161712,
+   "JavaScript": 133759,
+   "CSS": 22060,
+   "HTML": 12633,
+   "Shell": 2840,
+   "Dockerfile": 1196
+  }
+ },
+ "engrama": {
+  "commits": 309,
+  "languages": {
+   "Python": 1738826,
+   "Batchfile": 190
+  }
+ },
+ "jflp": {
+  "commits": 128,
+  "languages": {
+   "Python": 1244985,
+   "HTML": 79095,
+   "JavaScript": 47728,
+   "CSS": 27288,
+   "PowerShell": 2326,
+   "Shell": 1327,
+   "Java": 1292,
+   "Batchfile": 162
+  }
+ },
+ "money": {
+  "commits": 41,
+  "languages": {
+   "TypeScript": 227765,
+   "JavaScript": 1995
+  }
+ },
+ "acha-promocoes": {
+  "commits": 18,
+  "languages": {
+   "Python": 199518
+  }
+ },
+ "modaloop": {
+  "commits": 17,
+  "languages": {
+   "TypeScript": 18880,
+   "CSS": 5624,
+   "HTML": 453
+  }
+ },
+ "vat": {
+  "commits": 190,
+  "languages": {
+   "GDScript": 2779374,
+   "Python": 14158,
+   "PowerShell": 4056
+  }
+ },
+ "icndy": {
+  "commits": 20,
+  "languages": {
+   "TypeScript": 324891,
+   "JavaScript": 407
+  }
+ },
+ "website": {
+  "commits": 43,
+  "languages": {
+   "TypeScript": 63750,
+   "CSS": 37258,
+   "JavaScript": 7292,
+   "HTML": 3872
+  }
+ },
+ "eco-fruta": {
+  "commits": 11,
+  "languages": {
+   "TypeScript": 31229,
+   "JavaScript": 614
+  }
+ }
+}

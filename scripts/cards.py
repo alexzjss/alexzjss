@@ -8,6 +8,7 @@ because an SVG loaded through <img> cannot reference external images.
 Edit PROJECTS to add, remove or recolor a card.
 """
 import base64
+import json
 import textwrap
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -58,6 +59,17 @@ PROJECTS = {
         "Offline-first Android app for timing the Cindy CrossFit workout, with PR pace and charts.",
         ["ts", "react", "sqlite", "vitest", "githubactions"],
         "Expo · React Native · EAS", "#ff7b72", NARROW),
+    "money": (
+        "★ FLAGSHIP · MOBILE", "Paralelo",
+        "Android investment companion that runs entirely on the phone: portfolio vs CDI and inflation, asset "
+        "correlation (Ibovespa, S&P 500, USD) and allocation suggestions from a deterministic engine. No server, no accounts.",
+        ["ts", "react", "sqlite", "jest", "githubactions"],
+        "Expo · BCB & Yahoo data · optional BYO-key AI", "#3ddc97", WIDE),
+    "acha-promocoes": (
+        "▸ BOT", "acha-promocoes",
+        "Discord bot that watches 6 Brazilian stores for tech deals, scores each offer and routes it to the right channel.",
+        ["py", "discord"],
+        "scoring · alerts · affiliate links · Render", "#7289ff", NARROW),
     "website": (
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
@@ -72,7 +84,17 @@ PROJECTS = {
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
-LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
+LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["money", "acha-promocoes"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
+
+# Commit counts and language bytes come from scripts/data.json (written by scripts/refresh.py).
+DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
+# GitHub linguist colors
+LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
+               "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
+               "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e"}
+SHOT_H = 110              # screenshot strip under the chips; cards with one grow by SHOT_H + 10
+SHOTS = {"dasiboard", "sampanav"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
+MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}
 
@@ -84,6 +106,10 @@ def icon_uri(name):
     return _cache[name]
 
 
+def shot_uri(slug):
+    return "data:image/jpeg;base64," + base64.b64encode((OUT / "shots" / f"{slug}.jpg").read_bytes()).decode()
+
+
 def tint(hex_color, k=0.10):
     """Dark card background: the accent mixed into the page background."""
     base = (13, 17, 23)
@@ -91,7 +117,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -100,24 +126,44 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False)
         f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
+    meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
+    h = H + (SHOT_H + 10 if shot else 0)
+    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" rx="8"/></clipPath>'
+           f'<image x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
+           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{SHOT_H - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else ""
+    bar = lang_bar(langs, w) if langs else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {h + 2 * M}" width="{vw}" height="{h + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
+.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#6e7681}}
 .h{{font-size:21px;font-weight:700;fill:#e6edf3}}
 .d{{font-size:13px;fill:#b1bac4}}
 .c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent}}}
 </style>
 <g transform="translate({M} {M})">
-<rect x="0.5" y="0.5" width="{w - 1}" height="{H - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
-<text x="20" y="32" class="t">{escape(tag)}</text>
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
+<text x="20" y="32" class="t">{escape(tag)}</text>{meta}
 <text x="20" y="60" class="h">{escape(title)}</text>
-{text}{imgs}{chip}
+{text}{imgs}{chip}{bar}{pic}
 </g>
 </svg>
 '''
+
+
+def lang_bar(langs, w):
+    """Thin GitHub-style language strip along the card's bottom edge."""
+    total = sum(langs.values())
+    segs, x, span = [], 20, w - 40
+    for name, n in sorted(langs.items(), key=lambda kv: -kv[1]):
+        if n / total < MIN_SHARE:
+            continue
+        sw = n / total * span
+        segs.append(f'<rect x="{x:.1f}" y="0" width="{sw:.1f}" height="3" fill="{LANG_COLORS.get(name, "#8b949e")}"><title>{escape(name)} {n / total:.0%}</title></rect>')
+        x += sw
+    return f'<g transform="translate(0 211)"><clipPath id="r"><rect x="20" y="0" width="{span}" height="3" rx="1.5"/></clipPath><g clip-path="url(#r)">{"".join(segs)}</g></g>'
 
 
 def legend():
@@ -141,7 +187,8 @@ if __name__ == "__main__":
         for i, slug in enumerate(row):
             spec = PROJECTS[slug]
             path = OUT / f"card-{slug}.svg"
-            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1), encoding="utf-8")
+            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=DATA[slug]['commits'], langs=DATA[slug]['languages'],
+                                   shot=shot_uri(slug) if slug in SHOTS else None), encoding="utf-8")
             total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
             vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
             print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")
