@@ -25,6 +25,8 @@ Information Systems undergrad at the **University of São Paulo**.
 
 <p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
 
+<p align="center"><a href="https://github.com/alexzjss/money"><img src="assets/card-money.svg" width="66.9%" alt="paralelo"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="32.9%" alt="acha-promocoes"></a></p>
+
 <p align="center"><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="66.9%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
 
 <p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>

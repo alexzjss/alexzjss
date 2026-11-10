@@ -58,6 +58,17 @@ PROJECTS = {
         "Offline-first Android app for timing the Cindy CrossFit workout, with PR pace and charts.",
         ["ts", "react", "sqlite", "vitest", "githubactions"],
         "Expo · React Native · EAS", "#ff7b72", NARROW),
+    "money": (
+        "▸ MOBILE · FINTECH", "Paralelo",
+        "Android investment companion that runs entirely on the phone: portfolio vs CDI and inflation, asset "
+        "correlation (Ibovespa, S&P 500, USD) and allocation suggestions from a deterministic engine. No server, no accounts.",
+        ["ts", "react", "sqlite", "githubactions"],
+        "Expo · BCB & Yahoo data · optional BYO-key AI", "#3ddc97", WIDE),
+    "acha-promocoes": (
+        "▸ BOT", "acha-promocoes",
+        "Discord bot that monitors tech deals around the clock and classifies each offer before posting it.",
+        ["py", "discord"],
+        "collectors · classifier · Render", "#7289ff", NARROW),
     "website": (
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
@@ -72,7 +83,7 @@ PROJECTS = {
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
-LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
+LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["modaloop", "vat", "icndy"], ["money", "acha-promocoes"], ["website", "eco-fruta"]]
 
 _cache = {}
 
