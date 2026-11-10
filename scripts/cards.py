@@ -92,6 +92,8 @@ DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
 LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
                "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
                "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e"}
+SHOT_H = 110              # screenshot strip under the chips; cards with one grow by SHOT_H + 10
+SHOTS = {"dasiboard", "sampanav"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
 MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}
@@ -104,6 +106,10 @@ def icon_uri(name):
     return _cache[name]
 
 
+def shot_uri(slug):
+    return "data:image/jpeg;base64," + base64.b64encode((OUT / "shots" / f"{slug}.jpg").read_bytes()).decode()
+
+
 def tint(hex_color, k=0.10):
     """Dark card background: the accent mixed into the page background."""
     base = (13, 17, 23)
@@ -111,7 +117,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -121,10 +127,14 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False,
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
     meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
+    h = H + (SHOT_H + 10 if shot else 0)
+    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" rx="8"/></clipPath>'
+           f'<image x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
+           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{SHOT_H - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else ""
     bar = lang_bar(langs, w) if langs else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {h + 2 * M}" width="{vw}" height="{h + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
@@ -134,10 +144,10 @@ text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent}}}
 </style>
 <g transform="translate({M} {M})">
-<rect x="0.5" y="0.5" width="{w - 1}" height="{H - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
 <text x="20" y="32" class="t">{escape(tag)}</text>{meta}
 <text x="20" y="60" class="h">{escape(title)}</text>
-{text}{imgs}{chip}{bar}
+{text}{imgs}{chip}{bar}{pic}
 </g>
 </svg>
 '''
@@ -177,7 +187,8 @@ if __name__ == "__main__":
         for i, slug in enumerate(row):
             spec = PROJECTS[slug]
             path = OUT / f"card-{slug}.svg"
-            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=DATA[slug]['commits'], langs=DATA[slug]['languages']), encoding="utf-8")
+            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=DATA[slug]['commits'], langs=DATA[slug]['languages'],
+                                   shot=shot_uri(slug) if slug in SHOTS else None), encoding="utf-8")
             total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
             vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
             print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")
