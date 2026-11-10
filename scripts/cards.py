@@ -15,7 +15,8 @@ from xml.sax.saxutils import escape
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-H = 220
+BODY = 214                # card content height without a screenshot
+PAD = 10                  # room under the content for the language bar
 NARROW, WIDE = 280, 580   # 2 * NARROW + 20 gap = WIDE, so rows of 3 and 1+1 line up
 ICON, GAP = 28, 6
 M = 10                    # transparent margin baked into each SVG: the 20px gutter is exact, whatever the page width
@@ -25,7 +26,7 @@ PROJECTS = {
     "dasiboard": (
         "★ FLAGSHIP · 700+ STUDENTS", "DaSIboard",
         "All-in-one academic workspace for USP Information Systems students: kanban, grades & attendance, "
-        "calendar, study rooms and a curriculum flowchart. 500+ commits, built with a team.",
+        "calendar, study rooms and a curriculum flowchart. Built with a team.",
         ["ts", "react", "vite", "nodejs", "supabase", "postgres", "vercel", "vitest"],
         "Serverless API · Google OAuth · Web Push", "#39d0f0", WIDE),
     "sampanav": (
@@ -67,9 +68,9 @@ PROJECTS = {
         "Expo · BCB & Yahoo data · optional BYO-key AI", "#3ddc97", WIDE),
     "acha-promocoes": (
         "▸ BOT", "acha-promocoes",
-        "Discord bot that watches 6 Brazilian stores for tech deals, scores each offer and routes it to the right channel.",
+        "Discord bot that watches 6 Brazilian stores for tech deals, scores each offer and routes it by channel.",
         ["py", "discord"],
-        "scoring · alerts · affiliate links · Render", "#7289ff", NARROW),
+        "scoring · alerts · Render", "#7289ff", NARROW),
     "website": (
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
@@ -77,9 +78,9 @@ PROJECTS = {
         "PT/EN · SPA · design tokens", "#79c0ff", WIDE),
     "eco-fruta": (
         "▸ WEB", "eco-fruta",
-        "Virtual organic market in PT-BR: fruit, vegetable and greens catalog, producer profiles, cart and Mercado Pago checkout.",
+        "PT-BR organic market: produce catalog, producer profiles, cart and Mercado Pago checkout.",
         ["nextjs", "react", "ts", "tailwind", "vercel"],
-        "Zustand · Mercado Pago · Next.js 14", "#a5d86e", NARROW),
+        "Zustand · Mercado Pago · Next 14", "#a5d86e", NARROW),
 }
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
@@ -92,7 +93,7 @@ DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
 LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
                "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
                "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e"}
-SHOT_H = 110              # screenshot strip under the chips; cards with one grow by SHOT_H + 10
+SHOT_H = 130              # screenshot strip under the chips
 SHOTS = {"dasiboard", "sampanav"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
 MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
@@ -118,52 +119,58 @@ def tint(hex_color, k=0.10):
 
 
 def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None):
-    cols = 82 if w == WIDE else 38
-    lines = textwrap.wrap(desc, cols)
+    wide = w == WIDE
+    lines = textwrap.wrap(desc, 82 if wide else 38)
+    assert len(lines) <= 3, f"{title}: description wraps to {len(lines)} lines, it would hit the icons"
+    assert len(chips or "") <= (80 if wide else 33), f"{title}: chips line overflows the card"
     text = "".join(
         f'<text x="20" y="{86 + i * 18}" class="d">{escape(l)}</text>' for i, l in enumerate(lines))
     imgs = "".join(
-        f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
+        f'<image x="{20 + i * (ICON + GAP)}" y="146" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
-    chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
+    chip = f'<text x="20" y="202" class="c">{escape(chips)}</text>' if chips else ""
     meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
-    h = H + (SHOT_H + 10 if shot else 0)
-    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" rx="8"/></clipPath>'
-           f'<image x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
-           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{SHOT_H - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else ""
-    bar = lang_bar(langs, w) if langs else ""
+    body = BODY + (SHOT_H + 12 if shot else 0)
+    h = body + PAD
+    pic = (f'<clipPath id="s"><rect x="20" y="{BODY}" width="{w - 40}" height="{SHOT_H}" rx="8"/></clipPath>'
+           f'<image x="20" y="{BODY}" width="{w - 40}" height="{SHOT_H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
+           f'<rect x="20.5" y="{BODY + .5}" width="{w - 41}" height="{SHOT_H - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else ""
+    bar = lang_bar(langs, w, h) if langs else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {h + 2 * M}" width="{vw}" height="{h + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{tint(accent, .15)}"/><stop offset="1" stop-color="{tint(accent, .05)}"/></linearGradient>
+<clipPath id="card"><rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12"/></clipPath></defs>
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
-.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#6e7681}}
+.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#8b949e}}
 .h{{font-size:21px;font-weight:700;fill:#e6edf3}}
 .d{{font-size:13px;fill:#b1bac4}}
 .c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent}}}
 </style>
 <g transform="translate({M} {M})">
-<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="url(#g)"/>
 <text x="20" y="32" class="t">{escape(tag)}</text>{meta}
 <text x="20" y="60" class="h">{escape(title)}</text>
-{text}{imgs}{chip}{bar}{pic}
+{text}{imgs}{chip}{pic}{bar}
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="none" stroke="{accent}" stroke-opacity=".7"/>
 </g>
 </svg>
 '''
 
 
-def lang_bar(langs, w):
-    """Thin GitHub-style language strip along the card's bottom edge."""
+def lang_bar(langs, w, h):
+    """GitHub-style language strip flush with the card's bottom edge (clipped to its rounded corners)."""
     total = sum(langs.values())
-    segs, x, span = [], 20, w - 40
+    segs, x = [], 0.5
     for name, n in sorted(langs.items(), key=lambda kv: -kv[1]):
         if n / total < MIN_SHARE:
             continue
-        sw = n / total * span
-        segs.append(f'<rect x="{x:.1f}" y="0" width="{sw:.1f}" height="3" fill="{LANG_COLORS.get(name, "#8b949e")}"><title>{escape(name)} {n / total:.0%}</title></rect>')
+        sw = n / total * (w - 1)
+        segs.append(f'<rect x="{x:.1f}" y="{h - 4.5}" width="{sw:.1f}" height="4" fill="{LANG_COLORS.get(name, "#8b949e")}"><title>{escape(name)} {n / total:.0%}</title></rect>')
         x += sw
-    return f'<g transform="translate(0 211)"><clipPath id="r"><rect x="20" y="0" width="{span}" height="3" rx="1.5"/></clipPath><g clip-path="url(#r)">{"".join(segs)}</g></g>'
+    return f'<g clip-path="url(#card)">{"".join(segs)}</g>'
 
 
 def legend():
