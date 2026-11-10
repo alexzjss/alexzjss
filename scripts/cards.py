@@ -59,16 +59,16 @@ PROJECTS = {
         ["ts", "react", "sqlite", "vitest", "githubactions"],
         "Expo · React Native · EAS", "#ff7b72", NARROW),
     "money": (
-        "▸ MOBILE · FINTECH", "Paralelo",
+        "★ FLAGSHIP · MOBILE", "Paralelo",
         "Android investment companion that runs entirely on the phone: portfolio vs CDI and inflation, asset "
         "correlation (Ibovespa, S&P 500, USD) and allocation suggestions from a deterministic engine. No server, no accounts.",
-        ["ts", "react", "sqlite", "githubactions"],
+        ["ts", "react", "expo", "sqlite", "jest", "githubactions"],
         "Expo · BCB & Yahoo data · optional BYO-key AI", "#3ddc97", WIDE),
     "acha-promocoes": (
         "▸ BOT", "acha-promocoes",
-        "Discord bot that monitors tech deals around the clock and classifies each offer before posting it.",
+        "Discord bot that watches 6 Brazilian stores for tech deals, scores each offer and routes it to the right channel.",
         ["py", "discord"],
-        "collectors · classifier · Render", "#7289ff", NARROW),
+        "scoring · alerts · affiliate links · Render", "#7289ff", NARROW),
     "website": (
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
@@ -83,7 +83,12 @@ PROJECTS = {
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
-LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["modaloop", "vat", "icndy"], ["money", "acha-promocoes"], ["website", "eco-fruta"]]
+LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["money", "acha-promocoes"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
+
+# Commit counts from `gh api repos/alexzjss/<repo>/commits?per_page=1` (last page number), as of 2026-11-10.
+# Refresh them by hand; never put a number here that the repo does not back up.
+COMMITS = {"dasiboard": 518, "sampanav": 73, "engrama": 309, "jflp": 128, "money": 41, "acha-promocoes": 18,
+           "modaloop": 17, "vat": 190, "icndy": 20, "website": 43, "eco-fruta": 11}
 
 _cache = {}
 
@@ -102,7 +107,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -111,19 +116,21 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False)
         f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
+    meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
+.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#6e7681}}
 .h{{font-size:21px;font-weight:700;fill:#e6edf3}}
 .d{{font-size:13px;fill:#b1bac4}}
 .c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent}}}
 </style>
 <g transform="translate({M} {M})">
 <rect x="0.5" y="0.5" width="{w - 1}" height="{H - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
-<text x="20" y="32" class="t">{escape(tag)}</text>
+<text x="20" y="32" class="t">{escape(tag)}</text>{meta}
 <text x="20" y="60" class="h">{escape(title)}</text>
 {text}{imgs}{chip}
 </g>
@@ -152,7 +159,7 @@ if __name__ == "__main__":
         for i, slug in enumerate(row):
             spec = PROJECTS[slug]
             path = OUT / f"card-{slug}.svg"
-            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1), encoding="utf-8")
+            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=COMMITS.get(slug)), encoding="utf-8")
             total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
             vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
             print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")

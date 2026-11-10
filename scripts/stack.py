@@ -18,9 +18,9 @@ LABEL = "#8b949e"
 # (label, [(icon, name)])
 ROWS = [
     ("languages", [("py", "Python"), ("java", "Java"), ("ts", "TypeScript"), ("js", "JavaScript"), ("cpp", "C++")]),
-    ("frontend", [("react", "React"), ("nextjs", "Next.js"), ("vite", "Vite"), ("tailwind", "Tailwind"), ("html", "HTML"), ("css", "CSS")]),
-    ("backend & data", [("nodejs", "Node.js"), ("fastapi", "FastAPI"), ("postgres", "PostgreSQL"), ("supabase", "Supabase"), ("sqlite", "SQLite"), ("ollama", "Ollama")]),
-    ("tools", [("docker", "Docker"), ("git", "Git"), ("linux", "Linux"), ("githubactions", "GitHub Actions"), ("maven", "Maven"), ("godot", "Godot"), ("pygame", "pygame"), ("vercel", "Vercel")]),
+    ("frontend", [("react", "React"), ("expo", "Expo / React Native"), ("nextjs", "Next.js"), ("vite", "Vite"), ("tailwind", "Tailwind"), ("html", "HTML"), ("css", "CSS")]),
+    ("backend & data", [("nodejs", "Node.js"), ("fastapi", "FastAPI"), ("postgres", "PostgreSQL"), ("supabase", "Supabase"), ("sqlite", "SQLite"), ("ollama", "Ollama"), ("discord", "Discord API")]),
+    ("tools", [("docker", "Docker"), ("git", "Git"), ("linux", "Linux"), ("githubactions", "GitHub Actions"), ("jest", "Jest"), ("maven", "Maven"), ("godot", "Godot"), ("pygame", "pygame"), ("vercel", "Vercel")]),
 ]
 
 

@@ -10,10 +10,17 @@
 
 Information Systems undergrad at the **University of São Paulo**.
 
-- `focus   ` **software engineering meets data**: backend systems and full-stack products people actually use
-- `built   ` academic tooling for **700+ students** · a safety-aware route planner for **São Paulo**
+- `focus   ` **backend and full-stack products, from Discord bots to offline Android apps**, with data and testing close by
+- `built   ` academic tooling for **700+ students** · a safety-aware route planner for **São Paulo** · an investment companion that runs **100% on the phone**
 - `research` **software testing & debugging**
 - `also    ` geospatial data · ML/AI · security CTFs · game systems
+
+<details>
+<summary><sub>🇧🇷 leia em português</sub></summary>
+
+Graduando em Sistemas de Informação na **USP**. Construo backends e produtos full-stack, de bots no Discord a apps Android offline, sempre perto de dados e de testes. Já entreguei ferramentas acadêmicas para **700+ alunos**, um planejador de rotas de São Paulo que considera segurança e um app de investimentos que roda 100% no celular. Pesquiso **teste e depuração de software** no SAEG (PUB/USP).
+
+</details>
 
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
@@ -23,13 +30,13 @@ Information Systems undergrad at the **University of São Paulo**.
 
 <p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="66.9%" alt="engrama"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
-
 <p align="center"><a href="https://github.com/alexzjss/money"><img src="assets/card-money.svg" width="66.9%" alt="paralelo"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="32.9%" alt="acha-promocoes"></a></p>
+
+<p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
 
 <p align="center"><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="66.9%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
 
-<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
+<p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss/money/releases/latest">Paralelo (APK)</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -57,7 +64,7 @@ Information Systems undergrad at the **University of São Paulo**.
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama. Tools: Docker, Git, Linux, GitHub Actions, Maven, Godot, pygame, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Expo / React Native, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
 </td>
 </tr>
 </table>
