@@ -8,6 +8,7 @@ because an SVG loaded through <img> cannot reference external images.
 Edit PROJECTS to add, remove or recolor a card.
 """
 import base64
+import json
 import textwrap
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -62,7 +63,7 @@ PROJECTS = {
         "★ FLAGSHIP · MOBILE", "Paralelo",
         "Android investment companion that runs entirely on the phone: portfolio vs CDI and inflation, asset "
         "correlation (Ibovespa, S&P 500, USD) and allocation suggestions from a deterministic engine. No server, no accounts.",
-        ["ts", "react", "expo", "sqlite", "jest", "githubactions"],
+        ["ts", "react", "sqlite", "jest", "githubactions"],
         "Expo · BCB & Yahoo data · optional BYO-key AI", "#3ddc97", WIDE),
     "acha-promocoes": (
         "▸ BOT", "acha-promocoes",
@@ -85,10 +86,13 @@ PROJECTS = {
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
 LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["money", "acha-promocoes"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
 
-# Commit counts from `gh api repos/alexzjss/<repo>/commits?per_page=1` (last page number), as of 2026-11-10.
-# Refresh them by hand; never put a number here that the repo does not back up.
-COMMITS = {"dasiboard": 518, "sampanav": 73, "engrama": 309, "jflp": 128, "money": 41, "acha-promocoes": 18,
-           "modaloop": 17, "vat": 190, "icndy": 20, "website": 43, "eco-fruta": 11}
+# Commit counts and language bytes come from scripts/data.json (written by scripts/refresh.py).
+DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
+# GitHub linguist colors
+LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
+               "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
+               "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e"}
+MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}
 
@@ -107,7 +111,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -117,6 +121,7 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False,
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
     meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
+    bar = lang_bar(langs, w) if langs else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {H + 2 * M}" width="{vw}" height="{H + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
@@ -132,10 +137,23 @@ text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 <rect x="0.5" y="0.5" width="{w - 1}" height="{H - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
 <text x="20" y="32" class="t">{escape(tag)}</text>{meta}
 <text x="20" y="60" class="h">{escape(title)}</text>
-{text}{imgs}{chip}
+{text}{imgs}{chip}{bar}
 </g>
 </svg>
 '''
+
+
+def lang_bar(langs, w):
+    """Thin GitHub-style language strip along the card's bottom edge."""
+    total = sum(langs.values())
+    segs, x, span = [], 20, w - 40
+    for name, n in sorted(langs.items(), key=lambda kv: -kv[1]):
+        if n / total < MIN_SHARE:
+            continue
+        sw = n / total * span
+        segs.append(f'<rect x="{x:.1f}" y="0" width="{sw:.1f}" height="3" fill="{LANG_COLORS.get(name, "#8b949e")}"><title>{escape(name)} {n / total:.0%}</title></rect>')
+        x += sw
+    return f'<g transform="translate(0 211)"><clipPath id="r"><rect x="20" y="0" width="{span}" height="3" rx="1.5"/></clipPath><g clip-path="url(#r)">{"".join(segs)}</g></g>'
 
 
 def legend():
@@ -159,7 +177,7 @@ if __name__ == "__main__":
         for i, slug in enumerate(row):
             spec = PROJECTS[slug]
             path = OUT / f"card-{slug}.svg"
-            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=COMMITS.get(slug)), encoding="utf-8")
+            path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=DATA[slug]['commits'], langs=DATA[slug]['languages']), encoding="utf-8")
             total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
             vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
             print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")

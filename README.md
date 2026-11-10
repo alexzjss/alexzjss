@@ -64,7 +64,7 @@ Graduando em Sistemas de Informação na **USP**. Construo backends e produtos f
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Expo / React Native, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
 </td>
 </tr>
 </table>
