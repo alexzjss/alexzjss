@@ -57,17 +57,9 @@ Graduando em Sistemas de Informação na **USP**. Construo backends e produtos f
 
 <img src="assets/sec-stack.svg" width="100%" alt="$ tree --grow ~/stack">
 
-<table>
-<tr>
-<td align="center" width="40%">
-<img src="output/bonsai-growth.gif" width="260" alt="git-bonsai grown from alexzjss's commit history">
-<br><sub>grown daily from my commits</sub>
-</td>
-<td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
-</td>
-</tr>
-</table>
+<p align="center"><img src="assets/stack.svg" width="496" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel."></p>
+
+<p align="center"><img src="output/bonsai-growth.gif" width="200" alt="git-bonsai grown from alexzjss's commit history"><br><sub>grown daily from my commits</sub></p>
 
 <img src="assets/sec-achievements.svg" width="100%" alt="$ grep -c win ~/.achievements">
 
