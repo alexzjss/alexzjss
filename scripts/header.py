@@ -33,6 +33,22 @@ def prompt(y):
     return f'<text x="{X0}" y="{y}">{spans}</text>'
 
 
+def build_still():
+    """The finished terminal with no animation: shown instead of the typing one for prefers-reduced-motion."""
+    px = X0 + sum(len(s) for s, _ in PROMPT) * CW
+    out, y = [], Y0
+    for cmd, outputs in SCRIPT:
+        out.append(f'{prompt(y)}<text x="{px:.1f}" y="{y}" fill="{HI}">{escape(cmd)}</text>')
+        y += LH
+        for line in outputs:
+            spans = "".join(f'<tspan fill="{c}">{escape(s)}</tspan>' for s, c in line)
+            out.append(f'<text x="{X0}" y="{y}">{spans}</text>')
+            y += LH
+        y += 6
+    out.append(f'{prompt(y)}<rect x="{px:.1f}" y="{y - FS + 2}" width="{CW:.1f}" height="{FS + 2}" fill="{AMBER}"/>')
+    return "".join(out)
+
+
 def build():
     px = X0 + sum(len(s) for s, _ in PROMPT) * CW
     clips, body = [], []
@@ -71,10 +87,11 @@ def build():
 </filter>
 {"".join(clips)}
 </defs>
-<style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:{FS}px;white-space:pre}}</style>
+<style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:{FS}px;white-space:pre}}.still{{display:none}}@media (prefers-reduced-motion:reduce){{.live{{display:none}}.still{{display:inline}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{BG}" stroke="{BORDER}"/>
 <text x="{W - 24}" y="30" text-anchor="end" fill="{DIM}" style="font-size:12px">alex@usp: ~ — fish</text>
-<g filter="url(#glow)">{"".join(body)}</g>
+<g filter="url(#glow)" class="live">{"".join(body)}</g>
+<g filter="url(#glow)" class="still">{build_still()}</g>
 </svg>
 '''
 

@@ -106,8 +106,8 @@ LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#357
 # Screenshot strip under the chips. Every card of a README row has the same height, so the strip height is set per
 # row (LAYOUT index); a card without a screenshot in such a row gets a language breakdown panel instead.
 # assets/shots/<slug>.jpg is cut to the exact strip size by scripts/shots.py (the clawdesk gif is cut to it too).
-ROW_SHOT_H = {0: 140, 1: 154, 2: 110, 3: 130}
-SHOTS = {"dasiboard", "sampanav", "clawdesk", "virtualjrpg", "engrama", "constela"}   # slugs with assets/shots/<slug>.(jpg|gif)
+ROW_SHOT_H = {0: 140, 1: 154, 2: 110, 3: 130, 4: 130, 5: 140}
+SHOTS = {"dasiboard", "sampanav", "clawdesk", "virtualjrpg", "engrama", "jflp", "constela", "acha-promocoes", "modaloop", "vat", "icndy", "website", "eco-fruta"}   # slugs with assets/shots/<slug>.(jpg|gif)
 MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}

@@ -194,6 +194,9 @@ export function buildSvg(grid) {
   const emptyCells = [];
   const squares = [];
   const pellets = [];
+  // Same tiles without any animation, shown instead of the live layer when the viewer asks for reduced motion.
+  const stillSquares = [];
+  const stillPellets = [];
   for (let w = 0; w < grid.length; w++) {
     for (let d = 0; d < ROWS; d++) {
       const cell = grid[w][d];
@@ -215,10 +218,16 @@ export function buildSvg(grid) {
         squares.push(
           `<rect class="l${cell.level}" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2">${pulse}${eat}</rect>`
         );
+        stillSquares.push(
+          `<rect class="l${cell.level}" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2"/>`
+        );
       } else {
         // Empty days are maze corridors dotted with pellets for Pac to eat.
         pellets.push(
           `<circle class="pellet" cx="${round(x + CELL / 2)}" cy="${round(y + CELL / 2)}" r="1.6">${eat}</circle>`
+        );
+        stillPellets.push(
+          `<circle class="pellet" cx="${round(x + CELL / 2)}" cy="${round(y + CELL / 2)}" r="1.6"/>`
         );
       }
     }
@@ -242,12 +251,12 @@ export function buildSvg(grid) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="sans-serif">
   <style>
     :root {
-      --empty:#ebedf0; --l1:#9be9a8; --l2:#40c463; --l3:#30a14e; --l4:#216e39;
+      --empty:#ebedf0; --l1:#c6dbf5; --l2:#8bb8ec; --l3:#3f7fd0; --l4:#1f4f8a;
       --pac:#ffd93b; --pellet:#e0a92e;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --empty:#161b22; --l1:#0e4429; --l2:#006d32; --l3:#26a641; --l4:#39d353;
+        --empty:#161b22; --l1:#12305a; --l2:#1f4f8a; --l3:#4f86c0; --l4:#79c0ff;
         --pac:#ffd93b; --pellet:#ffe08a;
       }
     }
@@ -256,10 +265,22 @@ export function buildSvg(grid) {
     .l3 { fill: var(--l3); } .l4 { fill: var(--l4); }
     .pac { fill: var(--pac); }
     .pellet { fill: var(--pellet); }
+    .still { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .live { display: none; }
+      .still { display: inline; }
+    }
   </style>
   <g>${emptyCells.join("")}</g>
-  <g>${pellets.join("")}</g>
-  <g>${squares.join("")}</g>
-  ${pac}
+  <g class="live">
+    <g>${pellets.join("")}</g>
+    <g>${squares.join("")}</g>
+    ${pac}
+  </g>
+  <g class="still">
+    <g>${stillPellets.join("")}</g>
+    <g>${stillSquares.join("")}</g>
+    <g class="pac" transform="translate(${round(cx(order[0][0]))} ${round(cy(order[0][1]))})"><path d="${pacPath(MOUTH_OPEN)}"/></g>
+  </g>
 </svg>`;
 }

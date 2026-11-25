@@ -30,7 +30,7 @@ def build():
     for i, ((since, role, where), y) in enumerate(zip(ROLES, ys)):
         now = i == 0
         node = (f'<circle cx="{NODE_X}" cy="{y}" r="5" fill="{FG}"/>'
-                f'<circle cx="{NODE_X}" cy="{y}" r="5" fill="none" stroke="{FG}"><animate attributeName="r" values="5;12" dur="2s" repeatCount="indefinite"/>'
+                f'<circle class="pulse" cx="{NODE_X}" cy="{y}" r="5" fill="none" stroke="{FG}"><animate attributeName="r" values="5;12" dur="2s" repeatCount="indefinite"/>'
                 f'<animate attributeName="opacity" values=".8;0" dur="2s" repeatCount="indefinite"/></circle>') if now else \
                f'<circle cx="{NODE_X}" cy="{y}" r="4.5" fill="{BG}" stroke="{FG}" stroke-width="1.5"/>'
         rows.append(
@@ -38,7 +38,7 @@ def build():
             f'<text x="{NODE_X + 28}" y="{y + 5.5}" class="r" fill="#e6edf3">{escape(role)}</text>'
             f'<text x="{W - 28}" y="{y + 4.5}" class="m" text-anchor="end" fill="{SOFT if not now else FG}">{escape(where)}</text>')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" aria-label="Roles, newest first: {escape(label)}">
-<style>.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}}.r{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600}}</style>
+<style>.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}}.r{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600}}@media (prefers-reduced-motion:reduce){{.pulse{{display:none}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{h - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>
 <line x1="{NODE_X}" y1="{ys[0]}" x2="{NODE_X}" y2="{ys[-1]}" stroke="{BORDER}" stroke-width="2"/>
 {"".join(rows)}

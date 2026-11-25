@@ -25,10 +25,10 @@ SECTIONS = {
 
 def build(cmd, bg, border, fg, dim):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="$ {escape(cmd)}">
-<style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:16px;font-weight:600;white-space:pre}}</style>
+<style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:16px;font-weight:600;white-space:pre}}@media (prefers-reduced-motion:reduce){{.cur{{display:none}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="8" fill="{bg}" stroke="{border}"/>
 <text x="16" y="26"><tspan fill="{dim}">$ </tspan><tspan fill="{fg}">{escape(cmd)}</tspan></text>
-<rect x="{W - 24}" y="14" width="9" height="14" fill="{fg}"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
+<rect class="cur" x="{W - 24}" y="14" width="9" height="14" fill="{fg}"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
 </svg>
 '''
 
