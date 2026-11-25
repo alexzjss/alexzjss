@@ -17,13 +17,12 @@ LABEL = "#8b949e"
 
 # (label, [(icon, name)], optional line of tools without an icon)
 ROWS = [
-    ("languages", [("py", "Python"), ("java", "Java"), ("ts", "TypeScript"), ("js", "JavaScript"), ("cs", "C#"), ("cpp", "C++"), ("ps", "PowerShell"), ("bash", "Bash")], ""),
-    ("backend & data", [("nodejs", "Node.js"), ("fastapi", "FastAPI"), ("postgres", "PostgreSQL"), ("supabase", "Supabase"), ("sqlite", "SQLite"), ("discord", "Discord API")], "REST · WebSocket · OAuth · Web Push"),
-    ("frontend & mobile", [("react", "React / React Native"), ("nextjs", "Next.js"), ("vite", "Vite"), ("tailwind", "Tailwind"), ("html", "HTML"), ("css", "CSS")], "Expo · MapLibre · design tokens"),
-    ("testing & analysis", [("maven", "Maven"), ("jest", "Jest"), ("vitest", "Vitest")], "Jaguar 2 · JaCoCo · GUT · fault localization"),
-    ("geospatial & ML/AI", [("ollama", "Ollama")], "igraph · H3 · OSMnx · spiking nets · local LLMs"),
+    ("languages", [("py", "Python"), ("java", "Java"), ("ts", "TypeScript"), ("js", "JavaScript"), ("cs", "C#"), ("cpp", "C++")], ""),
+    ("backend & apis", [("nodejs", "Node.js"), ("fastapi", "FastAPI")], "REST · WebSocket · OAuth · Web Push · Discord"),
+    ("frontend & mobile", [("react", "React / React Native"), ("nextjs", "Next.js"), ("vite", "Vite"), ("tailwind", "Tailwind")], "HTML · CSS · Expo · MapLibre"),
+    ("data, geo & ai", [("postgres", "PostgreSQL"), ("supabase", "Supabase"), ("sqlite", "SQLite"), ("ollama", "Ollama")], "igraph · H3 · OSMnx · spiking nets · local LLMs"),
+    ("testing & research", [("maven", "Maven"), ("jest", "Jest"), ("vitest", "Vitest")], "Jaguar 2 · JaCoCo · GUT · fault localization"),
     ("devops & cloud", [("docker", "Docker"), ("git", "Git"), ("linux", "Linux"), ("githubactions", "GitHub Actions"), ("vercel", "Vercel")], ""),
-    ("games & graphics", [("godot", "Godot"), ("pygame", "pygame"), ("threejs", "Three.js")], ""),
 ]
 CHIP_H = 18
 
