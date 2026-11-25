@@ -7,28 +7,31 @@ Edit SECTIONS to add or recolor a section.
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from chrome import TB, titlebar
+
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-W, H = 880, 40
+W, H = 880, TB + 38
 
-# slug: (command, background, border, foreground, dim)
+# slug: (command, background, border, foreground, dim, window title)
 SECTIONS = {
-    "projects":     ("ls -l ~/projects",       "#08171b", "#0e5a6b", "#39d0f0", "#2a8aa0"),
-    "more":         ("ls -a ~/projects/more   [+5 ▾]", "#0d1117", "#39d0f0", "#39d0f0", "#2a8aa0"),
-    "research":     ("cat research.log",       "#08170e", "#1f6b3a", "#5fd38d", "#3d8f5f"),
-    "roles":        ("history | grep -i role", "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8"),
-    "stack":        ("tree --grow ~/stack",    "#1f0d0c", "#8a3a35", "#ff7b72", "#b0524c"),
-    "achievements": ("grep -c win ~/.achievements", "#1d0c15", "#8a3a68", "#f778ba", "#b0518a"),
-    "contributions": ("pacman ./contributions",     "#1a1604", "#7a6310", "#ffd93b", "#a88a1c"),
+    "projects":     ("ls -l ~/projects",       "#08171b", "#0e5a6b", "#39d0f0", "#2a8aa0", "zsh — ~/projects"),
+    "more":         ("ls -a ~/projects/more   [+5 ▾]", "#0d1117", "#39d0f0", "#39d0f0", "#2a8aa0", "zsh — ~/projects/more"),
+    "research":     ("cat research.log",       "#08170e", "#1f6b3a", "#5fd38d", "#3d8f5f", "zsh — ~/research"),
+    "roles":        ("history | grep -i role", "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8", "zsh — ~"),
+    "stack":        ("tree --grow ~/stack",    "#1f0d0c", "#8a3a35", "#ff7b72", "#b0524c", "zsh — ~/stack"),
+    "achievements": ("grep -c win ~/.achievements", "#1d0c15", "#8a3a68", "#f778ba", "#b0518a", "zsh — ~"),
+    "contributions": ("pacman ./contributions",     "#1a1604", "#7a6310", "#ffd93b", "#a88a1c", "zsh — ~/contributions"),
 }
 
 
-def build(cmd, bg, border, fg, dim):
+def build(cmd, bg, border, fg, dim, title):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="$ {escape(cmd)}">
 <style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:16px;font-weight:600;white-space:pre}}@media (prefers-reduced-motion:reduce){{.cur{{display:none}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="8" fill="{bg}" stroke="{border}"/>
-<text x="16" y="26"><tspan fill="{dim}">$ </tspan><tspan fill="{fg}">{escape(cmd)}</tspan></text>
-<rect class="cur" x="{W - 24}" y="14" width="9" height="14" fill="{fg}"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
+{titlebar(W, dim, border, title, rx=8)}
+<text x="16" y="{TB + 25}"><tspan fill="{dim}">$ </tspan><tspan fill="{fg}">{escape(cmd)}</tspan></text>
+<rect class="cur" x="{W - 24}" y="{TB + 12}" width="9" height="14" fill="{fg}"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
 </svg>
 '''
 

@@ -13,6 +13,8 @@ import textwrap
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from chrome import TB, titlebar
+
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
 H = 220
@@ -144,8 +146,7 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False,
         f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
-    meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
-    h = H + (shot_h + 10 if shot or panel else 0)
+    h = H + (shot_h + 10 if shot or panel else 0) + TB
     pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{shot_h}" rx="8"/></clipPath>'
            f'<image x="20" y="{H}" width="{w - 40}" height="{shot_h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
            f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{shot_h - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else (lang_panel(langs, w, shot_h, accent) if panel and langs else "")
@@ -163,9 +164,12 @@ text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 </style>
 <g transform="translate({M} {M})">
 <rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
-<text x="20" y="32" class="t">{escape(tag)}</text>{meta}
+{titlebar(w, accent, accent, f"~/{title}", f"{commits} commits" if commits else "", rx=12, align="start")}
+<g transform="translate(0 {TB})">
+<text x="20" y="32" class="t">{escape(tag)}</text>
 <text x="20" y="60" class="h">{escape(title)}</text>
 {text}{imgs}{chip}{bar}{pic}
+</g>
 </g>
 </svg>
 '''
