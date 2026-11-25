@@ -1,4 +1,4 @@
-"""Generate assets/stack.svg, the tech-stack icon grid of the README (no external icon service).
+"""Generate assets/stack-v2.svg (renamed to bust the GitHub image cache), the tech-stack icon grid of the README (no external icon service).
 
     python3 scripts/stack.py
 
@@ -10,7 +10,7 @@ from xml.sax.saxutils import escape
 
 from cards import icon_uri
 
-OUT = Path(__file__).resolve().parent.parent / "assets" / "stack.svg"
+OUT = Path(__file__).resolve().parent.parent / "assets" / "stack-v2.svg"
 
 ICON, GAP, LABEL_H, ROW_GAP = 48, 8, 16, 14
 LABEL = "#8b949e"
