@@ -50,7 +50,7 @@
 
 <img src="assets/sec-stack.svg" width="100%" alt="$ tree --grow ~/stack">
 
-<table>
+<table width="100%">
 <tr>
 <td align="center" width="40%">
 <img src="output/bonsai-growth.gif" width="260" alt="git-bonsai grown from alexzjss's commit history">
