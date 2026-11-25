@@ -78,7 +78,7 @@ def statusbar(w, y, color, left="", mid="", right="", rx=10, h=SB, border=None, 
     return "".join(out)
 
 
-def frame_svg(svg, title, color="#8b949e", border="#8b949e", names=None, status=None, bg="none", rx=10, pad=(14, 10)):
+def frame_svg(svg, title, color="#8b949e", border="#8b949e", names=None, status=None, bg="none", rx=10, pad=(14, 10), dark="#0d1117"):
     """Wrap a finished standalone SVG in a window: title bar (or tabs), the original drawing as a nested <svg>,
     and an optional status bar `(left, mid, right)`. Idempotent: an already framed SVG is returned unchanged.
     The frame is neutral by default, so charts that adapt to the page's light/dark theme keep working."""
@@ -95,17 +95,21 @@ def frame_svg(svg, title, color="#8b949e", border="#8b949e", names=None, status=
     label = f' role="img" aria-label="{label.group(1)}"' if label else ""
     fmt = lambda v: f"{v:g}"
     bar = titlebar(w, color, border, "" if names else title, rx=rx) + (tabs(w, color, border, names, bg if bg != "none" else "#0d1117", rx=rx) if names else "")
-    sb = statusbar(w, h - SB, color, *status, rx=rx, border=border) if status else ""
+    sb = statusbar(w, h - SB, color, *status, rx=rx, border=border, dark=dark) if status else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" data-framed="1" viewBox="0 0 {fmt(w)} {fmt(h)}" width="{fmt(w)}" height="{fmt(h)}"{label}>\n'
             f'<rect x=".5" y=".5" width="{fmt(w - 1)}" height="{fmt(h - 1)}" rx="{rx}" fill="{bg}" stroke="{border}" stroke-opacity=".5"/>\n'
             f'{bar}\n<svg x="{px}" y="{TB + py}" width="{fmt(iw)}" height="{fmt(ih)}" viewBox="{fmt(vb[0])} {fmt(vb[1])} {fmt(iw)} {fmt(ih)}">{body}</svg>\n{sb}\n</svg>\n')
 
 
 if __name__ == "__main__":
-    # python3 scripts/chrome.py <file.svg> <title> [status-left status-mid status-right]: frame a generated SVG in place.
+    # python3 scripts/chrome.py <file.svg> <THEME> <title> [status-left status-mid status-right]: frame a generated SVG in place
+    # with a palette of themes.py (e.g. SOLARIZED).
     import sys
     from pathlib import Path
-    path, title, *st = sys.argv[1:]
+    import themes
+    path, theme, title, *st = sys.argv[1:]
+    T = getattr(themes, theme.upper())
     p = Path(path)
-    p.write_text(frame_svg(p.read_text(encoding="utf-8"), title, status=tuple(st) if st else None), encoding="utf-8")
+    p.write_text(frame_svg(p.read_text(encoding="utf-8"), title, color=T["accent"], border=T["border"], bg=T["bg"], dark=T["surface"],
+                           status=tuple(st) if st else None), encoding="utf-8")
     print("framed", p)

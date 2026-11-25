@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 66" width="880" height="66" role="img" aria-label="$ grep -c win ~/.achievements">
-<style>text{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:16px;font-weight:600;white-space:pre}@media (prefers-reduced-motion:reduce){.cur{display:none}}</style>
-<rect x="0.5" y="0.5" width="879" height="65" rx="8" fill="#1d0c15" stroke="#8a3a68"/>
-<path d="M.5 28V8.5A8 8 0 0 1 8.5 .5H871.5A8 8 0 0 1 879.5 8.5V28Z" fill="#fff" fill-opacity=".045"/><line x1=".5" y1="28" x2="879.5" y2="28" stroke="#8a3a68" stroke-opacity=".7"/><circle cx="16.0" cy="14.0" r="5.5" fill="#ff5f57"/><circle cx="34.0" cy="14.0" r="5.5" fill="#febc2e"/><circle cx="52.0" cy="14.0" r="5.5" fill="#28c840"/><text x="440.0" y="18.0" text-anchor="middle" fill="#b0518a" style="font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11.5px;font-weight:500;white-space:pre">zsh — ~</text>
-<text x="16" y="53"><tspan fill="#b0518a">$ </tspan><tspan fill="#f778ba">grep -c win ~/.achievements</tspan></text>
-<text x="840" y="53" text-anchor="end" fill="#b0518a" fill-opacity=".7" style="font-size:12px;font-weight:500">✓ 0.03s</text>
-<rect class="cur" x="856" y="40" width="9" height="14" fill="#f778ba"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
+<style>text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:16px;font-weight:600;white-space:pre}@media (prefers-reduced-motion:reduce){.cur{display:none}}</style>
+<rect x="0.5" y="0.5" width="879" height="65" rx="8" fill="#1f1d2e" stroke="#403d52"/>
+<path d="M.5 28V8.5A8 8 0 0 1 8.5 .5H871.5A8 8 0 0 1 879.5 8.5V28Z" fill="#fff" fill-opacity=".045"/><line x1=".5" y1="28" x2="879.5" y2="28" stroke="#403d52" stroke-opacity=".7"/><circle cx="16.0" cy="14.0" r="5.5" fill="#ff5f57"/><circle cx="34.0" cy="14.0" r="5.5" fill="#febc2e"/><circle cx="52.0" cy="14.0" r="5.5" fill="#28c840"/><text x="440.0" y="18.0" text-anchor="middle" fill="#6e6a86" style="font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:11.5px;font-weight:500;white-space:pre;fill:#6e6a86">zsh — ~</text>
+<text x="16" y="53"><tspan fill="#6e6a86">$ </tspan><tspan fill="#f6c177">grep -c win ~/.achievements</tspan></text>
+<text x="840" y="53" text-anchor="end" fill="#6e6a86" fill-opacity=".7" style="font-size:12px;font-weight:500">✓ 0.03s</text><rect class="cur" x="856.0" y="40" width="9" height="14" fill="#f6c177"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
 </svg>

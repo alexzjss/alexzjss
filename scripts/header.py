@@ -8,6 +8,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from chrome import SB, statusbar, tabs, titlebar
+from themes import GRUVBOX as T
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "header.svg"
 
@@ -17,8 +18,8 @@ CW = FS * 0.62        # approx monospace advance; overestimate so the typing cli
 X0, Y0 = 32, 84
 STEP, PAUSE = 0.055, 0.45
 
-BG, BORDER = "#120d05", "#3a2a0c"
-AMBER, HI, DIM = "#ffb000", "#ffd98a", "#a87a1c"
+BG, BORDER = T["bg"], T["border"]
+AMBER, HI, DIM = T["accent"], T["fg"], T["dim"]
 
 # (command, [output line as (text, color) segments])
 SCRIPT = [

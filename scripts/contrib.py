@@ -32,7 +32,7 @@ TOP, ROW_PITCH = 30, 98
 LEGEND_Y, STATS_Y = 428, 494
 LEGEND_MAX = 6
 
-LABEL, DIM, EMPTY = "#8b949e", "#6e7681", "#161b22"
+LABEL, DIM, EMPTY = "#bfbfbf", "#6272a4", "#21222c"
 NEUTRAL = "#8b949e"                                  # contributions that are not commits
 SHADE = [0.5, 0.68, 0.85, 1.0]                        # opacity for busy-ness level 1..4
 FALLBACK = "#6e7681"                                  # repo without a detected language
@@ -199,7 +199,8 @@ def build(counts, langs, today):
 </svg>
 '''
     from chrome import frame_svg
-    return frame_svg(svg, "git log --since=12.months", names=["commits", "calendar"], status=("⎇ main", f"{total} contributions", "12 months"), pad=(14, 12))
+    from themes import DRACULA as T
+    return frame_svg(svg, "git log --since=12.months", names=["commits", "calendar"], status=("⎇ main", f"{total} contributions", "12 months"), color=T["accent"], border=T["border"], bg=T["bg"], dark=T["surface"], pad=(14, 12))
 
 
 if __name__ == "__main__":

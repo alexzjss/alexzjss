@@ -7,13 +7,14 @@ Edit the constants below to change the text, the pipeline steps or the project c
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from cards import ICON, M, icon_uri, tint
+from cards import ICON, M, icon_uri
+from themes import NORD as T
 from chrome import SB, TB, statusbar, tabs, titlebar
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "card-research.svg"
 
 W = 880
-ACCENT = "#5fd38d"                 # the research green (banner, JFLP card)
+ACCENT = T["accent"]               # Nord green
 TAG = "◆ RESEARCH · PUB/USP · CURRENT"
 TITLE = "Data Generation for Software Testing & Debugging Experimentation"
 GROUP = "Software Analysis & Experimentation Group (SAEG) · advised by Prof. Dr. Marcos Lordello Chaim"
@@ -63,20 +64,20 @@ def build():
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{ACCENT}}}
-.h{{font-size:21px;font-weight:700;fill:#e6edf3}}
-.d{{font-size:13px;fill:#b1bac4}}
+.h{{font-size:21px;font-weight:700;fill:{T["fg"]}}}
+.d{{font-size:13px;fill:{T["soft"]}}}
 .s{{font-size:12px}}
-.b{{font-size:14px;font-weight:700;fill:#e6edf3}}
+.b{{font-size:14px;font-weight:700;fill:{T["fg"]}}}
 .l{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.06em;fill:{ACCENT}}}
-.p{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:#c4ecd4}}
-.k{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#6e7681}}
+.p{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{T["soft"]}}}
+.k{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:{T["dim"]}}}
 .flow{{animation:flow 1s linear infinite}}@keyframes flow{{to{{stroke-dashoffset:-8}}}}
 @media (prefers-reduced-motion:reduce){{.flow{{animation:none}}}}
 </style>
 <g transform="translate({M} {M})">
-<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{tint(ACCENT)}" stroke="{ACCENT}" stroke-opacity=".7"/>
-{titlebar(W, ACCENT, ACCENT, "", rx=12)}{tabs(W, ACCENT, ACCENT, ["research", "pipeline", "dataset"], tint(ACCENT), rx=12)}
-{statusbar(W, H - SB, ACCENT, "⎇ main", f"{len(STEPS)} steps · {len(PROJECTS)} projects", "PUB/USP · SAEG", rx=12)}
+<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{T["bg"]}" stroke="{T["border"]}"/>
+{titlebar(W, ACCENT, T["border"], "", rx=12)}{tabs(W, ACCENT, T["border"], ["research", "pipeline", "dataset"], T["bg"], rx=12)}
+{statusbar(W, H - SB, ACCENT, "⎇ main", f"{len(STEPS)} steps · {len(PROJECTS)} projects", "PUB/USP · SAEG", rx=12, border=T["border"], dark=T["surface"])}
 <g transform="translate(0 {TB})">
 <text x="20" y="32" class="t">{escape(TAG)}</text>{icons}
 <text x="20" y="64" class="h">{escape(TITLE)}</text>

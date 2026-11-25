@@ -10,11 +10,12 @@ from xml.sax.saxutils import escape
 
 from cards import icon_uri
 from chrome import frame_svg
+from themes import DRACULA as T
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "stack-v2.svg"
 
 ICON, GAP, LABEL_H, ROW_GAP = 48, 8, 16, 14
-LABEL = "#8b949e"
+LABEL = T["soft"]
 
 # (label, [(icon, name)], lines of tools without an icon). Four rows of six icons: the grid fills the column evenly.
 ROWS = [
@@ -43,12 +44,12 @@ def build():
         y += rh + ROW_GAP
     alt = "; ".join(f"{l}: {', '.join([n for _, n in ic] + c)}" for l, ic, c in ROWS)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Stack. {escape(alt)}">
-<style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;fill:{LABEL}}}.c{{font-size:11px;fill:#6e7681}}</style>
+<style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;fill:{LABEL}}}.c{{font-size:11px;fill:{T["dim"]}}}</style>
 {"".join(body)}
 </svg>
 '''
     n = sum(len(r[1]) for r in ROWS)
-    return frame_svg(svg, "tree --grow ~/stack", names=["stack", "tools", "notes"], status=("⎇ main", f"{n} tools · {len(ROWS)} groups", "always growing"), pad=(18, 14))
+    return frame_svg(svg, "tree --grow ~/stack", names=["stack", "tools", "notes"], status=("⎇ main", f"{n} tools · {len(ROWS)} groups", "always growing"), color=T["accent"], border=T["border"], bg=T["bg"], dark=T["surface"], pad=(18, 14))
 
 
 if __name__ == "__main__":

@@ -8,25 +8,27 @@
 
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
+<!-- cards:start -->
 <p align="center"><img src="assets/legend-projects.svg" alt="Legend: flagship, research, side builds"></p>
 
-<p align="center"><a href="https://github.com/alexzjss/clawdesk"><img src="assets/card-clawdesk.svg" width="66.9%" alt="clawdesk"></a><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="32.9%" alt="virtualJRPG"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="49.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/clawdesk"><img src="assets/card-clawdesk.svg" width="49.9%" alt="clawdesk"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="32.9%" alt="sampanav"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="49.9%" alt="engrama"></a><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="49.9%" alt="constela"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="66.9%" alt="constela"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="32.9%" alt="acha-promocoes"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="49.9%" alt="sampanav"></a><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="49.9%" alt="virtualjrpg"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="66.9%" alt="engrama"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="34.0%" alt="acha-promocoes"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="32.9%" alt="website"></a></p>
 
 <details>
-<summary><img src="assets/sec-more.svg" width="100%" alt="$ ls -a ~/projects/more [+5]"></summary>
+<summary><img src="assets/sec-more.svg" width="100%" alt="$ ls -a ~/projects/more [+4]"></summary>
 <br>
 
-<p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="49.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="49.9%" alt="vat"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="66.9%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="49.9%" alt="icndy"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="49.9%" alt="eco-fruta"></a></p>
 
 </details>
+<!-- cards:end -->
 
 <p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss/clawdesk/releases/latest">Clawdesk (installer)</a> · <a href="https://github.com/alexzjss/constela/releases/latest">Constela (APK)</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
 

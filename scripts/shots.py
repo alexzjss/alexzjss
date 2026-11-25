@@ -18,49 +18,63 @@ from PIL import Image, ImageDraw, ImageEnhance
 ASSETS = Path(__file__).resolve().parent.parent / "assets" / "shots"
 SRC = ASSETS / "src"
 BRIGHTEN = {"virtualjrpg": 1.45}   # dark 3D scenes read better at thumbnail size
-WIDE, NARROW = 540, 240            # strip widths, = card width - 40 (see cards.py)
+HALF, THIRD = 390, 240             # strip widths, = card width - 40 (see cards.py): two cards a row (430) or three (280)
+TALL, SHORT = 160, 130             # strip heights of the two-card rows and of the three-card row
 
 # slug: (source, crop box in source pixels or None for a centered cover fit, strip width, strip height)
 SHOTS = {
     # curriculum constellation, cut on the semester borders (seven full columns)
-    "dasiboard": (SRC / "dasiboard.webp", (272, 334, 1327, 607), WIDE, 140),
+    "dasiboard": (SRC / "dasiboard.webp", (272, 334, 1327, 607), HALF, TALL),
     # the four times of day of the same meadow
-    "engrama": (SRC / "engrama.webp", (98, 0, 2302, 450), WIDE, 110),
+    "engrama": (SRC / "engrama.webp", (98, 0, 2302, 450), HALF, TALL),
     # a battle in the GM panel (3/4 camera) without the nav bar: the party, the command menu, an enemy group
-    "virtualjrpg": (SRC / "virtualjrpg.webp", (170, 45, 1128, 660), NARROW, 154),
+    "virtualjrpg": (SRC / "virtualjrpg.webp", (170, 45, 1128, 660), HALF, TALL),
     # coverage panel of the studio, dark theme
-    "jflp": (SRC / "jflp.webp", (0, 0, 1280, 587), NARROW, 110),
+    "jflp": (SRC / "jflp.webp", (0, 0, 1280, 587), THIRD, SHORT),
     # an offer as the bot posts it (an embed with the same fields as services/discord_sender.py; fictional offer)
-    "acha-promocoes": (SRC / "acha-promocoes.webp", None, NARROW, 130),
-    "modaloop": (SRC / "modaloop.webp", (0, 0, 1609, 872), NARROW, 130),
-    "vat": (SRC / "vat.webp", (0, 27, 1280, 720), NARROW, 130),
+    "acha-promocoes": (SRC / "acha-promocoes.webp", None, THIRD, SHORT),
+    "modaloop": (SRC / "modaloop.webp", (0, 0, 1609, 872), HALF, TALL),
+    "vat": (SRC / "vat.webp", (0, 27, 1280, 720), HALF, TALL),
     # the Projetos page of the live site (heading, filters, first case study)
-    "website": (SRC / "website.webp", (0, 100, 1440, 473), WIDE, 140),
+    "website": (SRC / "website.webp", (0, 100, 1440, 473), THIRD, SHORT),
     # hero of the live site: headline and the basket illustration
-    "eco-fruta": (SRC / "ecofruta.webp", (700, 90, 1440, 522), NARROW, 140),
+    "eco-fruta": (SRC / "ecofruta.webp", (100, 150, 1310, 646), HALF, TALL),
 }
 
 # slug: (list of (phone screenshot, top offset in source px), strip width, strip height, background): phone screens
 # side by side, each showing the top of the screen. Captured from the apps running on the web (made-up demo data).
 PHONES = {
     "constela": ([(SRC / "constela-1.webp", 0), (SRC / "constela-2.webp", 170), (SRC / "constela-3.webp", 0)],
-                 WIDE, 130, (13, 28, 22)),
-    "icndy": ([(SRC / "icndy-setup.webp", 0), (SRC / "icndy-home.webp", 190)], NARROW, 130, (24, 18, 22)),
+                 HALF, TALL, (13, 28, 22)),
+    "icndy": ([(SRC / "icndy-setup.webp", 0), (SRC / "icndy-home.webp", 190)], HALF, TALL, (24, 18, 22)),
 }
 
 # slug: (frames, crop box, seconds per frame): animated gif cut from the project's own docs images, at their native
-# resolution (pixel art: no resampling). 840x240 is the 540x154 strip of the card at 1.55x.
+# resolution (pixel art: no resampling), re-fitted to the strip's aspect ratio.
 GIFS = {
     "clawdesk": ([SRC / f"clawdesk-{n}.webp" for n in
                   ("trabalhando", "esperando", "feito-erro", "bola", "cavalinho", "filhotes", "descansando", "testes-web")],
-                 (0, 62, 840, 302), 1.8),
+                 (78, 20, 761, 300), 1.8, (HALF, TALL)),
 }
+
+
+def fit_box(box, w, h, size):
+    """Re-shape a crop box to the aspect ratio w:h, keeping its centre and as much of it as the source allows."""
+    l, t, r, b = box
+    bw, bh, r_ = r - l, b - t, w / h
+    nw, nh = (bw, bw / r_) if bw / bh > r_ else (bh * r_, bh)
+    k = min(1, size[0] / nw, size[1] / nh)                      # shrink when the grown box would leave the source
+    nw, nh = nw * k, nh * k
+    cx, cy = (l + r) / 2, (t + b) / 2
+    x0 = min(max(cx - nw / 2, 0), size[0] - nw)
+    y0 = min(max(cy - nh / 2, 0), size[1] - nh)
+    return (round(x0), round(y0), round(x0 + nw), round(y0 + nh))
 
 
 def make(slug, src, box, w, h):
     im = Image.open(src).convert("RGB")
     if box:
-        im = im.crop(box)
+        im = im.crop(fit_box(box, w, h, im.size))
     else:
         k = max(w * 2 / im.width, h * 2 / im.height)
         im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
@@ -86,7 +100,8 @@ def make_phones(slug, screens, w, h, bg, gap=18, radius=10):
     save(slug, canvas)
 
 
-def make_gif(slug, frames, box, seconds):
+def make_gif(slug, frames, box, seconds, strip):
+    box = fit_box(box, *strip, Image.open(frames[0]).size)
     ims = [Image.open(f).convert("RGB").crop(box) for f in frames]
     out = ASSETS / f"{slug}.gif"
     ims[0].save(out, save_all=True, append_images=ims[1:], duration=int(seconds * 1000), loop=0, optimize=True)

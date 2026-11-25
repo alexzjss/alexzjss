@@ -11,6 +11,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape, quoteattr
 
 from chrome import SB, TB, statusbar, tabs, titlebar
+from themes import CATPPUCCIN as T
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "roles.svg"
@@ -18,7 +19,7 @@ README = ROOT / "README.md"
 DATA = json.loads((Path(__file__).resolve().parent / "roles.json").read_text(encoding="utf-8"))
 
 W, ROW, TOP = 880, 46, 22
-BG, BORDER, FG, DIM, SOFT = "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8", "#a99bd6"
+BG, BORDER, FG, DIM, SOFT = T["bg"], T["border"], T["accent"], T["dim"], T["soft"]
 NODE_X = 150
 
 ROLES = [(r["since"], r["role"], r["where"]) for r in DATA["roles"]]
@@ -37,13 +38,13 @@ def build():
                f'<circle cx="{NODE_X}" cy="{y}" r="4.5" fill="{BG}" stroke="{FG}" stroke-width="1.5"/>'
         rows.append(
             f'<text x="28" y="{y + 4.5}" class="m" fill="{DIM}">since <tspan fill="{FG}">{since}</tspan></text>{node}'
-            f'<text x="{NODE_X + 28}" y="{y + 5.5}" class="r" fill="#e6edf3">{escape(role)}</text>'
+            f'<text x="{NODE_X + 28}" y="{y + 5.5}" class="r" fill="{T["fg"]}">{escape(role)}</text>'
             f'<text x="{W - 28}" y="{y + 4.5}" class="m" text-anchor="end" fill="{SOFT if not now else FG}">{escape(where)}</text>')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" aria-label="Roles, newest first: {escape(label)}">
 <style>.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}}.r{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600}}@media (prefers-reduced-motion:reduce){{.pulse{{display:none}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{h - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>
 {titlebar(W, FG, BORDER, "", rx=10)}{tabs(W, FG, BORDER, ["history", "roles", "also"], BG, rx=10)}
-{statusbar(W, h - SB, FG, "⎇ main", f"{len(ROLES)} roles", "newest first", rx=10, border=BORDER, dark=BG)}
+{statusbar(W, h - SB, FG, "⎇ main", f"{len(ROLES)} roles", "newest first", rx=10, border=BORDER, dark=T["surface"])}
 <g transform="translate(0 {TB})">
 <line x1="{NODE_X}" y1="{ys[0]}" x2="{NODE_X}" y2="{ys[-1]}" stroke="{BORDER}" stroke-width="2"/>
 {"".join(rows)}
