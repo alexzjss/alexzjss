@@ -57,7 +57,7 @@
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++. Backend and APIs: Node.js, FastAPI; REST, WebSocket, OAuth, Web Push, Discord. Frontend and mobile: React and React Native, Next.js, Vite, Tailwind; HTML, CSS, Expo, MapLibre. Data, geo and AI: PostgreSQL, Supabase, SQLite, Ollama; igraph, H3, OSMnx, spiking nets, local LLMs. Testing and research: Maven, Jest, Vitest; Jaguar 2, JaCoCo, GUT, fault localization. DevOps and cloud: Docker, Git, Linux, GitHub Actions, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++. Backend, data and AI: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama; REST, WebSocket, OAuth, Web Push, Discord, igraph, H3, OSMnx, spiking nets, local LLMs. Frontend, mobile and tests: React and React Native, Next.js, Vite, Tailwind, Jest, Vitest; HTML, CSS, Expo, MapLibre, GUT. DevOps, build and research: Docker, Git, Linux, GitHub Actions, Vercel, Maven; Jaguar 2, JaCoCo, fault localization.">
 </td>
 </tr>
 </table>
