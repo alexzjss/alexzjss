@@ -6,15 +6,6 @@
 
 </div>
 
-<img src="assets/sec-about.svg" width="100%" alt="$ cat about.md">
-
-Information Systems undergrad at the **University of São Paulo**.
-
-- `focus   ` **backend and full-stack products, from Discord bots to Windows desktop apps and offline Android apps**, with data and testing close by
-- `built   ` academic tooling for **700+ students** · a safety-aware route planner for **São Paulo** · a Windows mascot app for Claude Code sessions (**Clawdesk**) · an investment companion that runs **100% on the phone**
-- `research` **software testing & debugging**
-- `also    ` geospatial data · ML/AI · security CTFs · game systems
-
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
 <p align="center"><img src="assets/legend-projects.svg" alt="Legend: flagship, research, side builds"></p>
@@ -51,10 +42,11 @@ Information Systems undergrad at the **University of São Paulo**.
 + [SAEG · PUB/USP]  Data Generation for Software Testing & Debugging Experimentation
 ```
 
+- `project ` [Data Generation for Software Testing & Debugging Experimentation](https://uspdigital.usp.br/jupiterweb/beneficioBolsaUnificadaListar?codmnu=6684#) · unified scholarship (PUB/USP) · **current**
 - `group   ` Software Analysis & Experimentation Group (SAEG), advised by **Prof. Dr. Marcos Lordello Chaim**
-- `method  ` control-flow coverage with **Jaguar 2** on the **Defects4J** benchmark
-- `scale   ` 875 real faulty versions from 17 projects, via large-scale Java/Maven test execution
-- `goal    ` data for fault-localization experiments, automated in [JFLP Studio](https://github.com/alexzjss/jflp)
+- `dataset ` [**Bugs.jar**](https://github.com/bugs-dot-jar/bugs-dot-jar): real bugs from large Apache Java projects (Accumulo, Camel, Commons Math, Flink, Jackrabbit Oak, Log4j 2, Maven, Wicket)
+- `method  ` line and control-flow coverage with **Jaguar 2**, running each faulty version's tests on Linux with Java/Maven
+- `goal    ` coverage data for testing and debugging experiments (e.g. spectrum-based fault localization), shared with the research community
 
 <img src="assets/sec-roles.svg" width="100%" alt="$ history | grep -i role">
 
@@ -72,7 +64,7 @@ Information Systems undergrad at the **University of São Paulo**.
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++, C#, PowerShell. Frontend: React and React Native, Next.js, Vite, Tailwind, Three.js, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++, PowerShell, Bash. Frontend and mobile: React and React Native, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Testing and build: Jest, Vitest, Maven. Games and graphics: Godot, pygame, Three.js. DevOps and tools: Docker, Git, Linux, GitHub Actions, Vercel.">
 </td>
 </tr>
 </table>
