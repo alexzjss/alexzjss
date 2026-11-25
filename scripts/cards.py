@@ -59,8 +59,19 @@ PROJECTS = {
         "Offline-first Android app for timing the Cindy CrossFit workout, with PR pace and charts.",
         ["ts", "react", "sqlite", "vitest", "githubactions"],
         "Expo · React Native · EAS", "#ff7b72", NARROW),
-    "money": (
-        "★ FLAGSHIP · MOBILE", "Paralelo",
+    "clawdesk": (
+        "★ FLAGSHIP · DESKTOP", "Clawdesk",
+        "Pixel-art Clawd mascots on your Windows taskbar, one per Claude account, plus an office to watch every Claude "
+        "Code session at work: live status, statistics, themes, skins and notifications. One-click installer.",
+        ["cs", "ts", "js", "ps", "githubactions"],
+        "Windows tray app · Claude Code mod · PT/EN", "#ff8a5b", WIDE),
+    "virtualjrpg": (
+        "★ GAME · TABLETOP", "virtualJRPG",
+        "Virtual tabletop with its own d100 rules: CTB combat, Aura/Sanity, a skill tree and crafting. GM panel, player sheets, live over WebSocket.",
+        ["nodejs", "js", "html", "css"],
+        "WebSocket · Three.js", "#a78bfa", NARROW),
+    "constela": (
+        "★ FLAGSHIP · MOBILE", "Constela",
         "Android investment companion that runs entirely on the phone: portfolio vs CDI and inflation, asset "
         "correlation (Ibovespa, S&P 500, USD) and allocation suggestions from a deterministic engine. No server, no accounts.",
         ["ts", "react", "sqlite", "jest", "githubactions"],
@@ -69,7 +80,7 @@ PROJECTS = {
         "▸ BOT", "acha-promocoes",
         "Discord bot that watches 6 Brazilian stores for tech deals, scores each offer and routes it to the right channel.",
         ["py", "discord"],
-        "scoring · alerts · affiliate links · Render", "#7289ff", NARROW),
+        "scoring · alerts · Render", "#7289ff", NARROW),
     "website": (
         "▸ WEB", "website",
         "Bilingual (PT/EN) static portfolio: experience timeline, project filters, research and résumé, with light/dark design tokens.",
@@ -84,16 +95,16 @@ PROJECTS = {
 
 # README rows, left to right. The outer edge of each row has its margin cropped away so the
 # grid lines up with the 880px section bars; widths below are printed as the <img> percentages.
-LAYOUT = [["dasiboard", "sampanav"], ["engrama", "jflp"], ["money", "acha-promocoes"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
+LAYOUT = [["dasiboard", "sampanav"], ["clawdesk", "virtualjrpg"], ["engrama", "jflp"], ["constela", "acha-promocoes"], ["modaloop", "vat", "icndy"], ["website", "eco-fruta"]]
 
 # Commit counts and language bytes come from scripts/data.json (written by scripts/refresh.py).
 DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
 # GitHub linguist colors
 LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
                "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
-               "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e"}
+               "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e", "C#": "#178600"}
 SHOT_H = 110              # screenshot strip under the chips; cards with one grow by SHOT_H + 10
-SHOTS = {"dasiboard", "sampanav"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
+SHOTS = {"dasiboard", "sampanav", "clawdesk", "virtualjrpg"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
 MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}

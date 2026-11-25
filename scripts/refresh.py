@@ -14,7 +14,7 @@ OWNER = "alexzjss"
 # card slug: repo name
 REPOS = {
     "dasiboard": "dasiboard-omg", "sampanav": "SampaNav", "engrama": "engrama", "jflp": "jflp",
-    "money": "money", "acha-promocoes": "acha-promocoes", "modaloop": "modaloop", "vat": "vat",
+    "clawdesk": "clawdesk", "virtualjrpg": "virtualJRPG", "constela": "constela", "acha-promocoes": "acha-promocoes", "modaloop": "modaloop", "vat": "vat",
     "icndy": "ICNDY", "website": "website", "eco-fruta": "eco-fruta",
 }
 OUT = Path(__file__).resolve().parent / "data.json"
