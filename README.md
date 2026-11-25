@@ -66,7 +66,7 @@
 
 <p align="center"><a href="https://www.instagram.com/uspcodelab/"><img src="assets/achievement-hackfools.svg" width="24.3%" alt="Hackfools 2026, 1st place (USPCodeLab)"></a><a href="https://www.instagram.com/p/DYkP8RnkaMo/?img_index=5"><img src="assets/achievement-agents.svg" width="25.5%" alt="1st place, AI Agent Building Hackathon"></a><a href="https://www.instagram.com/p/DcwirCMmOkN/?img_index=2"><img src="assets/achievement-ctf.svg" width="25.5%" alt="Capture the Flag champion"></a><a href="https://premiacao.obmep.org.br/20obmep/verRelatorioPremiadosEstadualPorNivel-BA.3.do.htm"><img src="assets/achievement-obmep.svg" width="24.3%" alt="OBMEP 2025 state bronze medal, Bahia"></a></p>
 
-<img src="assets/sec-contributions.svg" width="100%" alt="$ snk ./contributions">
+<img src="assets/sec-contributions.svg" width="100%" alt="$ pacman ./contributions">
 
 <img src="output/pacman.svg" width="100%" alt="Pac-Man eating alexzjss's contribution graph">
 
