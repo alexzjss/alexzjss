@@ -53,8 +53,7 @@
 <table width="100%">
 <tr>
 <td align="center" width="40%">
-<img src="output/bonsai-growth.gif" width="260" alt="git-bonsai grown from alexzjss's commit history">
-<br><sub>grown daily from my commits</sub>
+<img src="assets/contrib.svg" width="100%" alt="Contributions over the last 12 months, shown as twelve small calendars">
 </td>
 <td width="60%">
 <img src="assets/stack-v2.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++. Backend, data and AI: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama; REST, WebSocket, OAuth, Web Push, Discord, igraph, H3, OSMnx, spiking nets, local LLMs. Frontend, mobile and tests: React and React Native, Next.js, Vite, Tailwind, Jest, Vitest; HTML, CSS, Expo, MapLibre, GUT. DevOps, build and research: Docker, Git, Linux, GitHub Actions, Vercel, Maven; Jaguar 2, JaCoCo, fault localization.">
