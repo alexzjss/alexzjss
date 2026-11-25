@@ -103,8 +103,11 @@ DATA = json.loads((Path(__file__).resolve().parent / "data.json").read_text())
 LANG_COLORS = {"TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5", "Java": "#b07219",
                "GDScript": "#355570", "CSS": "#663399", "HTML": "#e34c26", "PLpgSQL": "#336790",
                "Shell": "#89e051", "Dockerfile": "#384d54", "PowerShell": "#012456", "Batchfile": "#c1f12e", "C#": "#178600"}
-SHOT_H = 110              # screenshot strip under the chips; cards with one grow by SHOT_H + 10
-SHOTS = {"dasiboard", "sampanav", "clawdesk", "virtualjrpg"}   # slugs with assets/shots/<slug>.jpg (real screenshots of the live apps)
+# Screenshot strip under the chips. Every card of a README row has the same height, so the strip height is set per
+# row (LAYOUT index); a card without a screenshot in such a row gets a language breakdown panel instead.
+# assets/shots/<slug>.jpg is cut to the exact strip size by scripts/shots.py (the clawdesk gif is already 540x110).
+ROW_SHOT_H = {0: 130, 1: 110, 2: 110, 3: 130}
+SHOTS = {"dasiboard", "sampanav", "clawdesk", "virtualjrpg", "engrama", "constela"}   # slugs with assets/shots/<slug>.(jpg|gif)
 MIN_SHARE = 0.01          # languages under 1% would be sub-pixel slivers
 
 _cache = {}
@@ -132,7 +135,7 @@ def tint(hex_color, k=0.10):
     return "#" + "".join(f"{round(b + (c - b) * k):02x}" for b, c in zip(base, rgb))
 
 
-def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None):
+def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None, shot_h=0, panel=False):
     cols = 82 if w == WIDE else 38
     lines = textwrap.wrap(desc, cols)
     text = "".join(
@@ -142,10 +145,10 @@ def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False,
         for i, n in enumerate(icons))
     chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
     meta = f'<text x="{w - 20}" y="32" class="m" text-anchor="end">{commits} commits</text>' if commits else ""
-    h = H + (SHOT_H + 10 if shot else 0)
-    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" rx="8"/></clipPath>'
-           f'<image x="20" y="{H}" width="{w - 40}" height="{SHOT_H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
-           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{SHOT_H - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else ""
+    h = H + (shot_h + 10 if shot or panel else 0)
+    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{shot_h}" rx="8"/></clipPath>'
+           f'<image x="20" y="{H}" width="{w - 40}" height="{shot_h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
+           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{shot_h - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else (lang_panel(langs, w, shot_h, accent) if panel and langs else "")
     bar = lang_bar(langs, w) if langs else ""
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
@@ -181,6 +184,25 @@ def lang_bar(langs, w):
     return f'<g transform="translate(0 211)"><clipPath id="r"><rect x="20" y="0" width="{span}" height="3" rx="1.5"/></clipPath><g clip-path="url(#r)">{"".join(segs)}</g></g>'
 
 
+def lang_panel(langs, w, h, accent):
+    """Fills the strip of a card with no screenshot: the top languages as labelled bars."""
+    total = sum(langs.values())
+    top = [(n, v / total) for n, v in sorted(langs.items(), key=lambda kv: -kv[1]) if v / total >= MIN_SHARE][:4]
+    pitch = min((h - 24) / max(len(top), 1), 24)
+    y0 = (h - pitch * len(top) + (pitch - 10)) / 2 - 1      # rows block centred in the strip
+    track = w - 40 - 24 - 84 - 44                      # panel inner width minus label and percentage columns
+    rows = []
+    for i, (name, share) in enumerate(top):
+        y = y0 + i * pitch
+        bw = max(share * track, 3)
+        rows.append(f'<text x="32" y="{H + y + 9}" class="pl">{escape(name.lower())}</text>'
+                    f'<rect x="{32 + 84}" y="{H + y + 1}" width="{track}" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/>'
+                    f'<rect x="{32 + 84}" y="{H + y + 1}" width="{bw:.1f}" height="8" rx="4" fill="{LANG_COLORS.get(name, "#8b949e")}"/>'
+                    f'<text x="{w - 32}" y="{H + y + 9}" class="pl" text-anchor="end">{share:.0%}</text>')
+    return (f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{h - 1}" rx="8" fill="#000" fill-opacity=".18" stroke="{accent}" stroke-opacity=".35"/>'
+            f'<style>.pl{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#8b949e}}</style>{"".join(rows)}')
+
+
 def legend():
     """One-line key for the tag symbols, placed above the grid."""
     items = [("★", "#ffb000", "flagship"), ("◆", "#5fd38d", "research"), ("▸", "#8b949e", "side builds")]
@@ -198,12 +220,14 @@ def legend():
 
 if __name__ == "__main__":
     (OUT / "legend-projects.svg").write_text(legend(), encoding="utf-8")
-    for row in LAYOUT:
+    for ri, row in enumerate(LAYOUT):
+        row_shot = any(x in SHOTS for x in row)
         for i, slug in enumerate(row):
             spec = PROJECTS[slug]
             path = OUT / f"card-{slug}.svg"
             path.write_text(build(*spec, crop_l=i == 0, crop_r=i == len(row) - 1, commits=DATA[slug]['commits'], langs=DATA[slug]['languages'],
-                                   shot=shot_uri(slug) if slug in SHOTS else None), encoding="utf-8")
+                                   shot=shot_uri(slug) if slug in SHOTS else None,
+                                   shot_h=ROW_SHOT_H.get(ri, 0), panel=row_shot and slug not in SHOTS), encoding="utf-8")
             total = sum(PROJECTS[x][-1] + 2 * M for x in row) - 2 * M
             vw = spec[-1] + 2 * M - (M if i == 0 else 0) - (M if i == len(row) - 1 else 0)
             print("wrote", path, f"width={vw / total * 100 - 0.1:.1f}%")
