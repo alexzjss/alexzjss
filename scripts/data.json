@@ -40,6 +40,33 @@
    "Batchfile": 162
   }
  },
+ "clawdesk": {
+  "commits": 18,
+  "languages": {
+   "C#": 502449,
+   "TypeScript": 70659,
+   "JavaScript": 51396,
+   "PowerShell": 5577,
+   "Python": 4327
+  }
+ },
+ "virtualjrpg": {
+  "commits": 339,
+  "languages": {
+   "JavaScript": 1934189,
+   "CSS": 24133,
+   "HTML": 10804,
+   "Shell": 1051,
+   "Batchfile": 997
+  }
+ },
+ "constela": {
+  "commits": 44,
+  "languages": {
+   "TypeScript": 227969,
+   "JavaScript": 1995
+  }
+ },
  "acha-promocoes": {
   "commits": 18,
   "languages": {
@@ -84,33 +111,6 @@
   "languages": {
    "TypeScript": 31229,
    "JavaScript": 614
-  }
- },
- "clawdesk": {
-  "commits": 18,
-  "languages": {
-   "C#": 502449,
-   "TypeScript": 70659,
-   "JavaScript": 51396,
-   "PowerShell": 5577,
-   "Python": 4327
-  }
- },
- "virtualjrpg": {
-  "commits": 339,
-  "languages": {
-   "JavaScript": 1934189,
-   "CSS": 24133,
-   "HTML": 10804,
-   "Shell": 1051,
-   "Batchfile": 997
-  }
- },
- "constela": {
-  "commits": 44,
-  "languages": {
-   "TypeScript": 227969,
-   "JavaScript": 1995
   }
  }
 }
