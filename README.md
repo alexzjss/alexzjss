@@ -19,7 +19,7 @@
 <p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="66.9%" alt="engrama"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a></p>
 
 <details>
-<summary><sub>more projects</sub></summary>
+<summary><img src="assets/sec-more.svg" width="100%" alt="$ ls -a ~/projects/more [+5]"></summary>
 <br>
 
 <p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
@@ -29,12 +29,6 @@
 </details>
 
 <p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss/clawdesk/releases/latest">Clawdesk (installer)</a> · <a href="https://github.com/alexzjss/constela/releases/latest">Constela (APK)</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
-
-<img src="assets/sec-clawdesk.svg" width="100%" alt="$ cd ~/projects/clawdesk">
-
-<p align="center">
-<a href="https://github.com/alexzjss/clawdesk/releases/latest"><img src="https://img.shields.io/github/v/release/alexzjss/clawdesk?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Latest Clawdesk release"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases"><img src="https://img.shields.io/github/downloads/alexzjss/clawdesk/total?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Clawdesk downloads"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases/latest/download/ClawdeskSetup.exe"><img src="https://img.shields.io/badge/download-ClawdeskSetup.exe-ff8a5b?style=for-the-badge&labelColor=1f120c" alt="Download ClawdeskSetup.exe"></a>
-</p>
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -52,7 +46,6 @@
 
 <img src="assets/roles.svg" width="100%" alt="Roles, newest first: 2026-10 Claude Campus Ambassador at THE·TEAM; 2026-09 Backend Development Trainee at Síntese Jr.; 2026-07 Undergraduate Researcher at SAEG · USP; 2026-05 Data & AI Researcher at Hype — Data & AI; 2026-03 IT Project Coordinator at DASI USP">
 
-<sub>as ambassador I also build <a href="https://github.com/alexzjss/clawdesk">Clawdesk</a>, a Claude Code companion for Windows</sub><br>
 <sub>also: PET-SI EACH-USP (scholar) · Each In The Shell (cybersecurity) · USPCodeLab Leste (web PM) · Conway USP (gamedev, design lead) · Semana de SI (organizing committee)</sub>
 
 <img src="assets/sec-stack.svg" width="100%" alt="$ tree --grow ~/stack">
@@ -64,7 +57,7 @@
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++, PowerShell, Bash. Frontend and mobile: React and React Native, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Testing and build: Jest, Vitest, Maven. Games and graphics: Godot, pygame, Three.js. DevOps and tools: Docker, Git, Linux, GitHub Actions, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C#, C++, PowerShell, Bash. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Discord API; REST, WebSocket, OAuth, Web Push. Frontend and mobile: React and React Native, Next.js, Vite, Tailwind, HTML, CSS; Expo, MapLibre, design tokens. Testing and analysis: Maven, Jest, Vitest; Jaguar 2, JaCoCo, GUT, fault localization. Geospatial and ML/AI: Ollama; igraph, H3, OSMnx, spiking nets, local LLMs. DevOps and cloud: Docker, Git, Linux, GitHub Actions, Vercel. Games and graphics: Godot, pygame, Three.js.">
 </td>
 </tr>
 </table>
