@@ -32,21 +32,17 @@
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
-```diff
-+ [SAEG · PUB/USP]  Data Generation for Software Testing & Debugging Experimentation
-```
+<img src="assets/card-research.svg" width="100%" alt="Data Generation for Software Testing &amp; Debugging Experimentation: SAEG, USP. Bugs.jar bugs, tests run on every faulty version, Jaguar 2 coverage, shared as an open dataset.">
 
-- `project ` [Data Generation for Software Testing & Debugging Experimentation](https://uspdigital.usp.br/jupiterweb/beneficioBolsaUnificadaListar?codmnu=6684#) · unified scholarship (PUB/USP) · **current**
-- `group   ` Software Analysis & Experimentation Group (SAEG), advised by **Prof. Dr. Marcos Lordello Chaim**
-- `dataset ` [**Bugs.jar**](https://github.com/bugs-dot-jar/bugs-dot-jar): real bugs from large Apache Java projects (Accumulo, Camel, Commons Math, Flink, Jackrabbit Oak, Log4j 2, Maven, Wicket)
-- `method  ` line and control-flow coverage with **Jaguar 2**, running each faulty version's tests on Linux with Java/Maven
-- `goal    ` coverage data for testing and debugging experiments (e.g. spectrum-based fault localization), shared with the research community
+<p align="center"><sub><a href="https://uspdigital.usp.br/jupiterweb/beneficioBolsaUnificadaListar?codmnu=6684#">unified scholarship (PUB/USP)</a> · <a href="https://github.com/bugs-dot-jar/bugs-dot-jar">Bugs.jar dataset</a> · coverage data for fault-localization experiments, shared with the research community</sub></p>
 
 <img src="assets/sec-roles.svg" width="100%" alt="$ history | grep -i role">
 
-<img src="assets/roles.svg" width="100%" alt="Roles, newest first: 2026-10 Claude Campus Ambassador at THE·TEAM; 2026-09 Backend Development Trainee at Síntese Jr.; 2026-07 Undergraduate Researcher at SAEG · USP; 2026-05 Data & AI Researcher at Hype — Data & AI; 2026-03 IT Project Coordinator at DASI USP">
+<!-- roles:start -->
+<img src="assets/roles.svg" width="100%" alt="Roles, newest first: 2026-10 Claude Campus Ambassador at THE·TEAM; 2026-09 Backend Development Trainee at Síntese Jr.; 2026-07 Undergraduate Researcher at SAEG · USP; 2026-05 Data &amp; AI Researcher at Hype — Data &amp; AI; 2026-03 IT Project Coordinator at DASI USP">
 
 <sub>also: PET-SI EACH-USP (scholar) · Each In The Shell (cybersecurity) · USPCodeLab Leste (web PM) · Conway USP (gamedev, design lead) · Semana de SI (organizing committee)</sub>
+<!-- roles:end -->
 
 <img src="assets/sec-stack.svg" width="100%" alt="$ tree --grow ~/stack">
 

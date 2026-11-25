@@ -1,26 +1,25 @@
-"""Generate assets/roles.svg, the `history` timeline of the README.
+"""Generate assets/roles.svg, the `history` timeline of the README, and refresh the block around it in README.md.
 
     python3 scripts/roles.py
 
-Edit ROLES (newest first) to add a role.
+Edit scripts/roles.json ("roles", newest first, and "also") to add a role: the SVG, its alt text and the
+"also:" line all come from there. README.md is rewritten between the <!-- roles:start --> and <!-- roles:end --> markers.
 """
+import json
+import re
 from pathlib import Path
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape, quoteattr
 
-OUT = Path(__file__).resolve().parent.parent / "assets" / "roles.svg"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "assets" / "roles.svg"
+README = ROOT / "README.md"
+DATA = json.loads((Path(__file__).resolve().parent / "roles.json").read_text(encoding="utf-8"))
 
 W, ROW, TOP = 880, 46, 22
 BG, BORDER, FG, DIM, SOFT = "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8", "#a99bd6"
 NODE_X = 150
 
-# (since, role, where)
-ROLES = [
-    ("2026-10", "Claude Campus Ambassador", "THE·TEAM"),
-    ("2026-09", "Backend Development Trainee", "Síntese Jr. (IT consulting junior enterprise)"),
-    ("2026-07", "Undergraduate Researcher", "SAEG · USP"),
-    ("2026-05", "Data & AI Researcher", "Hype — Data & AI"),
-    ("2026-03", "IT Project Coordinator", "DASI USP"),
-]
+ROLES = [(r["since"], r["role"], r["where"]) for r in DATA["roles"]]
 
 
 def build():
@@ -47,6 +46,20 @@ def build():
 '''
 
 
+def readme_block():
+    short = lambda w: w.split(" (")[0]            # "Síntese Jr. (IT consulting ...)" -> "Síntese Jr."
+    alt = "Roles, newest first: " + "; ".join(f"{s} {r} at {short(w)}" for s, r, w in ROLES)
+    return (f'<!-- roles:start -->\n<img src="assets/roles.svg" width="100%" alt={quoteattr(alt)}>\n\n'
+            f'<sub>also: {" · ".join(DATA["also"])}</sub>\n<!-- roles:end -->')
+
+
 if __name__ == "__main__":
     OUT.write_text(build(), encoding="utf-8")
     print("wrote", OUT)
+    text = README.read_text(encoding="utf-8")
+    new, n = re.subn(r"<!-- roles:start -->.*?<!-- roles:end -->", lambda _: readme_block(), text, flags=re.S)
+    if n:
+        README.write_text(new, encoding="utf-8")
+        print("updated the roles block in", README)
+    else:
+        print("no <!-- roles:start --> / <!-- roles:end --> markers in README.md: add them around the roles image to keep it in sync")

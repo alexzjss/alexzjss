@@ -1,0 +1,16 @@
+{
+  "roles": [
+    {"since": "2026-10", "role": "Claude Campus Ambassador", "where": "THE·TEAM"},
+    {"since": "2026-09", "role": "Backend Development Trainee", "where": "Síntese Jr. (IT consulting junior enterprise)"},
+    {"since": "2026-07", "role": "Undergraduate Researcher", "where": "SAEG · USP"},
+    {"since": "2026-05", "role": "Data & AI Researcher", "where": "Hype — Data & AI"},
+    {"since": "2026-03", "role": "IT Project Coordinator", "where": "DASI USP"}
+  ],
+  "also": [
+    "PET-SI EACH-USP (scholar)",
+    "Each In The Shell (cybersecurity)",
+    "USPCodeLab Leste (web PM)",
+    "Conway USP (gamedev, design lead)",
+    "Semana de SI (organizing committee)"
+  ]
+}

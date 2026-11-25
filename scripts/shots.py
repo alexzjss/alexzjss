@@ -20,12 +20,20 @@ WIDE, NARROW = 540, 240           # strip widths, = card width - 40 (see cards.p
 
 # slug: (source image, crop box in source pixels, strip width, strip height)
 SHOTS = {
-    # constellation view of the curriculum: dark like the card, a lot of color
-    "dasiboard": (SRC / "dasiboard-omg/docs/screenshots/disciplinas.png", (200, 300, 1440, 598), WIDE, 130),
+    # constellation view of the curriculum, cut on column borders (seven full semesters): dark like the card, a lot of color
+    "dasiboard": (SRC / "dasiboard-omg/docs/screenshots/disciplinas.png", (272, 334, 1327, 607), WIDE, 140),
     # four times of day of the same meadow
     "engrama": (SRC / "engrama/docs/images/ui-daynight.png", (98, 0, 2302, 450), WIDE, 110),
     # a battle in the running app (GM panel, 3/4 camera): the party, the command menu and an enemy group, 1440x660 capture
-    "virtualjrpg": (SRC / "scratch/vj-combat.png", (100, 100, 1200, 605), NARROW, 110),
+    "virtualjrpg": (SRC / "scratch/vj-combat.png", (170, 45, 1128, 660), NARROW, 154),
+}
+
+# slug: (frames, crop box, seconds per frame): animated assets/shots/<slug>.gif cut from the repo's own docs images, at their
+# native resolution (pixel art: no resampling). 840x240 is the 540x154 strip of the card at 1.55x.
+GIFS = {
+    "clawdesk": ([SRC / f"clawdesk/docs/clawds-{n}.png" for n in
+                  ("trabalhando", "esperando", "feito-erro", "bola", "cavalinho", "filhotes", "descansando", "testes-web")],
+                 (0, 62, 840, 302), 1.8),
 }
 
 # slug: (list of (phone screenshot, top offset in source px), strip width, strip height, background): phone screens
@@ -70,7 +78,19 @@ def make_phones(slug, screens, w, h, bg, gap=18, radius=10):
     print("wrote", out, f"{out.stat().st_size / 1024:.0f} KB")
 
 
+def make_gif(slug, frames, box, seconds):
+    ims = [Image.open(f).convert("RGB").crop(box) for f in frames]
+    out = ASSETS / f"{slug}.gif"
+    ims[0].save(out, save_all=True, append_images=ims[1:], duration=int(seconds * 1000), loop=0, optimize=True)
+    print("wrote", out, f"{out.stat().st_size / 1024:.0f} KB")
+
+
 if __name__ == "__main__":
-    only = sys.argv[1:] or [*SHOTS, *PHONES]
+    only = sys.argv[1:] or [*SHOTS, *PHONES, *GIFS]
     for slug in only:
-        make_phones(slug, *PHONES[slug]) if slug in PHONES else make(slug, *SHOTS[slug])
+        if slug in GIFS:
+            make_gif(slug, *GIFS[slug])
+        elif slug in PHONES:
+            make_phones(slug, *PHONES[slug])
+        else:
+            make(slug, *SHOTS[slug])
