@@ -68,7 +68,7 @@
 
 <img src="assets/sec-contributions.svg" width="100%" alt="$ snk ./contributions">
 
-<img src="https://raw.githubusercontent.com/alexzjss/alexzjss/snake/snake.svg" width="100%" alt="Snake eating alexzjss's contribution graph">
+<img src="output/pacman.svg" width="100%" alt="Pac-Man eating alexzjss's contribution graph">
 
 <div align="center">
 <br>

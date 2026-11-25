@@ -1,0 +1,26 @@
+name: pacman
+on:
+  schedule:
+    - cron: '0 4 * * *'   # diariamente
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate the Pac-Man contribution graph
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ github.repository_owner }}
+        run: node scripts/pacman/generate.mjs --out output
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/pacman.svg
+          git diff --cached --quiet || { git commit -m "chore: feed pac-man" && git pull --rebase && git push; }
