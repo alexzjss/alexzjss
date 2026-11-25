@@ -118,6 +118,10 @@ def icon_uri(name):
 
 
 def shot_uri(slug):
+    """assets/shots/<slug>.gif (animated) wins over <slug>.jpg."""
+    gif = OUT / "shots" / f"{slug}.gif"
+    if gif.exists():
+        return "data:image/gif;base64," + base64.b64encode(gif.read_bytes()).decode()
     return "data:image/jpeg;base64," + base64.b64encode((OUT / "shots" / f"{slug}.jpg").read_bytes()).decode()
 
 

@@ -15,30 +15,48 @@ Information Systems undergrad at the **University of São Paulo**.
 - `research` **software testing & debugging**
 - `also    ` geospatial data · ML/AI · security CTFs · game systems
 
-<details>
-<summary><sub>🇧🇷 leia em português</sub></summary>
-
-Graduando em Sistemas de Informação na **USP**. Construo backends e produtos full-stack, de bots no Discord a apps Android offline, sempre perto de dados e de testes. Já entreguei ferramentas acadêmicas para **700+ alunos**, um planejador de rotas de São Paulo que considera segurança, o **Clawdesk** (mascotes em pixel art para sessões do Claude Code no Windows) e um app de investimentos que roda 100% no celular. Pesquiso **teste e depuração de software** no SAEG (PUB/USP).
-
-</details>
-
 <img src="assets/sec-projects.svg" width="100%" alt="$ ls -l ~/projects">
 
 <p align="center"><img src="assets/legend-projects.svg" alt="Legend: flagship, research, side builds"></p>
 
+<p align="center"><a href="https://github.com/alexzjss/clawdesk"><img src="assets/card-clawdesk.svg" width="66.9%" alt="clawdesk"></a><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="32.9%" alt="virtualJRPG"></a></p>
+
 <p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="66.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="32.9%" alt="sampanav"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/clawdesk"><img src="assets/card-clawdesk.svg" width="66.9%" alt="clawdesk"></a><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="32.9%" alt="virtualJRPG"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="66.9%" alt="constela"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="32.9%" alt="acha-promocoes"></a></p>
 
 <p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="66.9%" alt="engrama"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="66.9%" alt="constela"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="32.9%" alt="acha-promocoes"></a></p>
+<details>
+<summary><sub>more projects</sub></summary>
+<br>
 
 <p align="center"><a href="https://github.com/alexzjss/modaloop"><img src="assets/card-modaloop.svg" width="32.9%" alt="modaloop"></a><a href="https://github.com/alexzjss/vat"><img src="assets/card-vat.svg" width="34.0%" alt="vat"></a><a href="https://github.com/alexzjss/ICNDY"><img src="assets/card-icndy.svg" width="32.9%" alt="icndy"></a></p>
 
 <p align="center"><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="66.9%" alt="website"></a><a href="https://github.com/alexzjss/eco-fruta"><img src="assets/card-eco-fruta.svg" width="32.9%" alt="eco-fruta"></a></p>
 
+</details>
+
 <p align="center"><sub>live: <a href="https://dasiboard.vercel.app/">DaSIboard</a> · <a href="https://sampanav.vercel.app">SampaNav</a> · <a href="https://alexjsz.vercel.app/">website</a> · <a href="https://eco-fruta.vercel.app">eco-fruta</a> · <a href="https://github.com/alexzjss/clawdesk/releases/latest">Clawdesk (installer)</a> · <a href="https://github.com/alexzjss/constela/releases/latest">Constela (APK)</a> · <a href="https://github.com/alexzjss?tab=repositories">all repos</a></sub></p>
+
+<img src="assets/sec-clawdesk.svg" width="100%" alt="$ cd ~/projects/clawdesk">
+
+<p align="center">
+<a href="https://github.com/alexzjss/clawdesk/releases/latest"><img src="https://img.shields.io/github/v/release/alexzjss/clawdesk?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Latest Clawdesk release"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases"><img src="https://img.shields.io/github/downloads/alexzjss/clawdesk/total?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Clawdesk downloads"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases/latest/download/ClawdeskSetup.exe"><img src="https://img.shields.io/badge/download-ClawdeskSetup.exe-ff8a5b?style=for-the-badge&labelColor=1f120c" alt="Download ClawdeskSetup.exe"></a>
+</p>
+
+A pixel-art **Clawd** for each Claude account, sitting on the Windows taskbar, plus an **office** where every Claude Code session shows up at its desk: working, waiting for you, done or in error.
+
+- `app      ` tray app with Home (the office), 7/30/90-day statistics, accounts, themes, skins and notifications · PT/EN
+- `mod      ` Claude Code mod that reports what each session is doing and puts a Clawd inside Claude
+- `cloud    ` sessions from claude.ai and other computers show up too, through a secret Gist
+- `install  ` one-click installer with SHA-256 verified auto-updates
+
+Already on Claude Code? Install just the mod:
+
+```
+/plugin install clawdesk --marketplace alexzjss/clawdesk
+```
 
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
@@ -55,6 +73,7 @@ Graduando em Sistemas de Informação na **USP**. Construo backends e produtos f
 
 <img src="assets/roles.svg" width="100%" alt="Roles, newest first: 2026-10 Claude Campus Ambassador at THE·TEAM; 2026-09 Backend Development Trainee at Síntese Jr.; 2026-07 Undergraduate Researcher at SAEG · USP; 2026-05 Data & AI Researcher at Hype — Data & AI; 2026-03 IT Project Coordinator at DASI USP">
 
+<sub>as ambassador I also build <a href="https://github.com/alexzjss/clawdesk">Clawdesk</a>, a Claude Code companion for Windows</sub><br>
 <sub>also: PET-SI EACH-USP (scholar) · Each In The Shell (cybersecurity) · USPCodeLab Leste (web PM) · Conway USP (gamedev, design lead) · Semana de SI (organizing committee)</sub>
 
 <img src="assets/sec-stack.svg" width="100%" alt="$ tree --grow ~/stack">
@@ -66,7 +85,7 @@ Graduando em Sistemas de Informação na **USP**. Construo backends e produtos f
 <br><sub>grown daily from my commits</sub>
 </td>
 <td width="60%">
-<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++. Frontend: React, Next.js, Vite, Tailwind, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: Python, Java, TypeScript, JavaScript, C++, C#, PowerShell. Frontend: React and React Native, Next.js, Vite, Tailwind, Three.js, HTML, CSS. Backend and data: Node.js, FastAPI, PostgreSQL, Supabase, SQLite, Ollama, Discord API. Tools: Docker, Git, Linux, GitHub Actions, Jest, Maven, Godot, pygame, Vercel.">
 </td>
 </tr>
 </table>

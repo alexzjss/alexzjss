@@ -15,6 +15,7 @@ W, H = 880, 40
 SECTIONS = {
     "about":        ("cat about.md",           "#1a1408", "#6b4a00", "#ffb000", "#a87a1c"),
     "projects":     ("ls -l ~/projects",       "#08171b", "#0e5a6b", "#39d0f0", "#2a8aa0"),
+    "clawdesk":     ("cd ~/projects/clawdesk", "#1f120c", "#8a4a2b", "#ff8a5b", "#b0653f"),
     "research":     ("cat research.log",       "#08170e", "#1f6b3a", "#5fd38d", "#3d8f5f"),
     "roles":        ("history | grep -i role", "#120d1f", "#5a3fa0", "#b392f0", "#7b62b8"),
     "stack":        ("tree --grow ~/stack",    "#1f0d0c", "#8a3a35", "#ff7b72", "#b0524c"),
