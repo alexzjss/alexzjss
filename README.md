@@ -45,19 +45,6 @@ Information Systems undergrad at the **University of São Paulo**.
 <a href="https://github.com/alexzjss/clawdesk/releases/latest"><img src="https://img.shields.io/github/v/release/alexzjss/clawdesk?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Latest Clawdesk release"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases"><img src="https://img.shields.io/github/downloads/alexzjss/clawdesk/total?style=for-the-badge&color=ff8a5b&labelColor=1f120c" alt="Clawdesk downloads"></a>&nbsp;<a href="https://github.com/alexzjss/clawdesk/releases/latest/download/ClawdeskSetup.exe"><img src="https://img.shields.io/badge/download-ClawdeskSetup.exe-ff8a5b?style=for-the-badge&labelColor=1f120c" alt="Download ClawdeskSetup.exe"></a>
 </p>
 
-A pixel-art **Clawd** for each Claude account, sitting on the Windows taskbar, plus an **office** where every Claude Code session shows up at its desk: working, waiting for you, done or in error.
-
-- `app      ` tray app with Home (the office), 7/30/90-day statistics, accounts, themes, skins and notifications · PT/EN
-- `mod      ` Claude Code mod that reports what each session is doing and puts a Clawd inside Claude
-- `cloud    ` sessions from claude.ai and other computers show up too, through a secret Gist
-- `install  ` one-click installer with SHA-256 verified auto-updates
-
-Already on Claude Code? Install just the mod:
-
-```
-/plugin install clawdesk --marketplace alexzjss/clawdesk
-```
-
 <img src="assets/sec-research.svg" width="100%" alt="$ cat research.log">
 
 ```diff
