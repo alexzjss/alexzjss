@@ -187,7 +187,7 @@ def build(counts, langs, today):
     names = ", ".join(n for (n, _), _ in top)
     alt = (f"Contributions over the last 12 months: {total} in total, shown as twelve small calendars, "
            f"each day colored by its main commit language ({names}).")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{alt}">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{alt}">
 <style>text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;fill:{LABEL}}}.c{{font-size:11px;fill:{DIM}}}.v{{fill:#c9d1d9}}
 .d{{opacity:0;animation:in .5s ease-out forwards;transform-box:fill-box;transform-origin:center}}
 @keyframes in{{from{{opacity:0;transform:scale(.4)}}to{{opacity:1;transform:scale(1)}}}}
@@ -198,6 +198,8 @@ def build(counts, langs, today):
 {stats}
 </svg>
 '''
+    from chrome import frame_svg
+    return frame_svg(svg, "git log --since=12.months", names=["commits", "calendar"], status=("⎇ main", f"{total} contributions", "12 months"), pad=(14, 12))
 
 
 if __name__ == "__main__":

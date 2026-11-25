@@ -7,11 +7,11 @@ Edit SCRIPT below to change what gets typed.
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from chrome import titlebar
+from chrome import SB, statusbar, tabs, titlebar
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "header.svg"
 
-W, H = 780, 308
+W, H = 780, 308 + SB
 FS, LH = 17, 30
 CW = FS * 0.62        # approx monospace advance; overestimate so the typing clip never cuts text
 X0, Y0 = 32, 84
@@ -91,7 +91,8 @@ def build():
 </defs>
 <style>text{{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:{FS}px;white-space:pre}}.still{{display:none}}@media (prefers-reduced-motion:reduce){{.live{{display:none}}.still{{display:inline}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{BG}" stroke="{BORDER}"/>
-{titlebar(W, DIM, BORDER, "alex@usp: ~ — fish", rx=12)}
+{titlebar(W, AMBER, BORDER, "", rx=12)}{tabs(W, AMBER, BORDER, ["fish", "git", "nvim"], BG, rx=12)}
+{statusbar(W, H - SB, AMBER, "[0] fish", "alex@usp", "São Paulo · BR", rx=12, border=BORDER, dark=BG)}
 <g filter="url(#glow)" class="live">{"".join(body)}</g>
 <g filter="url(#glow)" class="still">{build_still()}</g>
 </svg>

@@ -8,7 +8,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from cards import ICON, M, icon_uri, tint
-from chrome import TB, titlebar
+from chrome import SB, TB, statusbar, tabs, titlebar
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "card-research.svg"
 
@@ -30,7 +30,7 @@ PROJECTS = ["Accumulo", "Camel", "Commons Math", "Flink", "Jackrabbit Oak", "Log
 BOX_W, BOX_H, GAP = 186, 64, 32      # 4 * 186 + 3 * 32 = 840 = card width - 2 * 20
 PIPE_Y = 108
 CHIP_Y = 194
-H = 236 + TB
+H = 236 + TB + SB
 
 
 def build():
@@ -75,7 +75,8 @@ text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 </style>
 <g transform="translate({M} {M})">
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{tint(ACCENT)}" stroke="{ACCENT}" stroke-opacity=".7"/>
-{titlebar(W, ACCENT, ACCENT, "~/research/saeg", "PUB/USP", rx=12, align="start")}
+{titlebar(W, ACCENT, ACCENT, "", rx=12)}{tabs(W, ACCENT, ACCENT, ["research", "pipeline", "dataset"], tint(ACCENT), rx=12)}
+{statusbar(W, H - SB, ACCENT, "⎇ main", f"{len(STEPS)} steps · {len(PROJECTS)} projects", "PUB/USP · SAEG", rx=12)}
 <g transform="translate(0 {TB})">
 <text x="20" y="32" class="t">{escape(TAG)}</text>{icons}
 <text x="20" y="64" class="h">{escape(TITLE)}</text>

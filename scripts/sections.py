@@ -31,6 +31,7 @@ def build(cmd, bg, border, fg, dim, title):
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="8" fill="{bg}" stroke="{border}"/>
 {titlebar(W, dim, border, title, rx=8)}
 <text x="16" y="{TB + 25}"><tspan fill="{dim}">$ </tspan><tspan fill="{fg}">{escape(cmd)}</tspan></text>
+<text x="{W - 40}" y="{TB + 25}" text-anchor="end" fill="{dim}" fill-opacity=".7" style="font-size:12px;font-weight:500">✓ 0.03s</text>
 <rect class="cur" x="{W - 24}" y="{TB + 12}" width="9" height="14" fill="{fg}"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5001;1" dur="1.1s" repeatCount="indefinite"/></rect>
 </svg>
 '''

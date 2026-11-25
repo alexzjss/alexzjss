@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 from xml.sax.saxutils import escape, quoteattr
 
-from chrome import TB, titlebar
+from chrome import SB, TB, statusbar, tabs, titlebar
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "roles.svg"
@@ -25,7 +25,7 @@ ROLES = [(r["since"], r["role"], r["where"]) for r in DATA["roles"]]
 
 
 def build():
-    h = TOP * 2 + ROW * (len(ROLES) - 1) + 4 + TB
+    h = TOP * 2 + ROW * (len(ROLES) - 1) + 4 + TB + SB
     ys = [TOP + 2 + i * ROW for i in range(len(ROLES))]
     label = "; ".join(f"{s} {r} at {w}" for s, r, w in ROLES)
     rows = []
@@ -42,7 +42,8 @@ def build():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" aria-label="Roles, newest first: {escape(label)}">
 <style>.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}}.r{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600}}@media (prefers-reduced-motion:reduce){{.pulse{{display:none}}}}</style>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{h - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>
-{titlebar(W, DIM, BORDER, "zsh — ~ — history", rx=10)}
+{titlebar(W, FG, BORDER, "", rx=10)}{tabs(W, FG, BORDER, ["history", "roles", "also"], BG, rx=10)}
+{statusbar(W, h - SB, FG, "⎇ main", f"{len(ROLES)} roles", "newest first", rx=10, border=BORDER, dark=BG)}
 <g transform="translate(0 {TB})">
 <line x1="{NODE_X}" y1="{ys[0]}" x2="{NODE_X}" y2="{ys[-1]}" stroke="{BORDER}" stroke-width="2"/>
 {"".join(rows)}

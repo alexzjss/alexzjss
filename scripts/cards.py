@@ -13,11 +13,12 @@ import textwrap
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from chrome import TB, titlebar
+from chrome import MONO, SB, TB, statusbar, tabs, titlebar
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-H = 220
+H = 252                    # height of the shell-session body, up to the screenshot window
+WIN = 22                   # title bar of the screenshot window
 NARROW, WIDE = 280, 580   # 2 * NARROW + 20 gap = WIDE, so rows of 3 and 1+1 line up
 ICON, GAP = 28, 6
 M = 10                    # transparent margin baked into each SVG: the 20px gutter is exact, whatever the page width
@@ -138,41 +139,75 @@ def tint(hex_color, k=0.10):
 
 
 def build(tag, title, desc, icons, chips, accent, w, crop_l=False, crop_r=False, commits=None, langs=None, shot=None, shot_h=0, panel=False):
+    """A card is a terminal window: tabs in the title bar, a short shell session as the body
+    (`$ cat README.md`, `$ ls stack/`), the screenshot in a mini window, and a status bar with commits and languages."""
     cols = 82 if w == WIDE else 38
+    bg = tint(accent)
     lines = textwrap.wrap(desc, cols)
-    text = "".join(
-        f'<text x="20" y="{86 + i * 18}" class="d">{escape(l)}</text>' for i, l in enumerate(lines))
+    text = "".join(f'<text x="20" y="{98 + i * 18}" class="d">{escape(l)}</text>' for i, l in enumerate(lines))
+    prompt = lambda y, cmd: f'<text x="20" y="{y}" class="pr"><tspan fill-opacity=".6">$ </tspan><tspan class="cm">{escape(cmd)}</tspan></text>'
     imgs = "".join(
-        f'<image x="{20 + i * (ICON + GAP)}" y="148" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
+        f'<image x="{20 + i * (ICON + GAP)}" y="190" width="{ICON}" height="{ICON}" href="{icon_uri(n)}"/>'
         for i, n in enumerate(icons))
-    chip = f'<text x="20" y="206" class="c">{escape(chips)}</text>' if chips else ""
-    h = H + (shot_h + 10 if shot or panel else 0) + TB
-    pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{shot_h}" rx="8"/></clipPath>'
-           f'<image x="20" y="{H}" width="{w - 40}" height="{shot_h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#s)" href="{shot}"/>'
-           f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{shot_h - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".35"/>') if shot else (lang_panel(langs, w, shot_h, accent) if panel and langs else "")
-    bar = lang_bar(langs, w) if langs else ""
+    chip = f'<text x="20" y="238" class="c"># {escape(chips)}</text>' if chips else ""
+    if shot or panel:
+        body_h = H + WIN + shot_h + 12
+        if shot:
+            pic = (f'<clipPath id="s"><rect x="20" y="{H}" width="{w - 40}" height="{WIN + shot_h}" rx="8"/></clipPath>'
+                   f'<rect x="20" y="{H}" width="{w - 40}" height="{WIN + shot_h}" rx="8" fill="#0d1117" filter="url(#sh)"/>'
+                   f'<g clip-path="url(#s)"><image x="20" y="{H + WIN}" width="{w - 40}" height="{shot_h}" preserveAspectRatio="xMidYMid slice" href="{shot}"/></g>'
+                   f'<g transform="translate(20 {H})">{titlebar(w - 40, accent, accent, "preview.png", rx=8, h=WIN, scale=.75)}</g>'
+                   f'<rect x="20.5" y="{H + .5}" width="{w - 41}" height="{WIN + shot_h - 1}" rx="8" fill="none" stroke="{accent}" stroke-opacity=".4"/>')
+        else:
+            pic = lang_panel(langs, w, shot_h, accent)
+    else:
+        body_h, pic = H - 2, ""
+    h = TB + body_h + SB
     x0 = M if crop_l else 0
     vw = w + 2 * M - x0 - (M if crop_r else 0)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{x0} 0 {vw} {h + 2 * M}" width="{vw}" height="{h + 2 * M}" role="img" aria-label="{escape(title)}: {escape(desc)}">
+<defs><filter id="sh" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity=".5"/></filter></defs>
 <style>
 text{{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}}
 .t{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;fill:{accent}}}
-.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:#6e7681}}
+.pr{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:600;fill:{accent}}}
+.cm{{fill:#e6edf3;font-weight:500}}
 .h{{font-size:21px;font-weight:700;fill:#e6edf3}}
 .d{{font-size:13px;fill:#b1bac4}}
-.c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent}}}
+.c{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;fill:{accent};fill-opacity:.85}}
 </style>
 <g transform="translate({M} {M})">
-<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{tint(accent)}" stroke="{accent}" stroke-opacity=".7"/>
-{titlebar(w, accent, accent, f"~/{title}", f"{commits} commits" if commits else "", rx=12, align="start")}
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{bg}" stroke="{accent}" stroke-opacity=".7"/>
+{titlebar(w, accent, accent, "", rx=12)}{tabs(w, accent, accent, ["readme", "stack", "shot"], bg, rx=12)}
 <g transform="translate(0 {TB})">
-<text x="20" y="32" class="t">{escape(tag)}</text>
-<text x="20" y="60" class="h">{escape(title)}</text>
-{text}{imgs}{chip}{bar}{pic}
+{prompt(24, "cat README.md")}
+<text x="20" y="48" class="t">{escape(tag)}</text>
+<text x="20" y="76" class="h">{escape(title)}</text>
+{text}{prompt(182, "ls stack/")}{imgs}{chip}{pic}
 </g>
+{status(w, h, accent, commits, langs)}
 </g>
 </svg>
 '''
+
+
+def status(w, h, accent, commits, langs):
+    """Bottom status bar: branch pill, commit count, and the top language with a GitHub-style strip."""
+    right_w, y = 70, h - SB
+    bar = statusbar(w, y, accent, "⎇ main", f"{commits} commits" if commits else "", rx=12)
+    if not langs:
+        return bar
+    total = sum(langs.values())
+    top = max(langs, key=langs.get)
+    segs, x = [], w - 14 - right_w
+    for name, n in sorted(langs.items(), key=lambda kv: -kv[1]):
+        if n / total < MIN_SHARE:
+            continue
+        sw = n / total * right_w
+        segs.append(f'<rect x="{x:.1f}" y="{y + 9}" width="{sw:.1f}" height="6" fill="{LANG_COLORS.get(name, "#8b949e")}"><title>{escape(name)} {n / total:.0%}</title></rect>')
+        x += sw
+    label = f'<text x="{w - 14 - right_w - 8}" y="{y + SB / 2 + 4}" text-anchor="end" fill="{accent}" fill-opacity=".75" style="font-family:{MONO};font-size:11px">{escape(top) + " " if w == WIDE else ""}{langs[top] / total:.0%}</text>'
+    return f'{bar}{label}<clipPath id="r"><rect x="{w - 14 - right_w}" y="{y + 9}" width="{right_w}" height="6" rx="3"/></clipPath><g clip-path="url(#r)">{"".join(segs)}</g>'
 
 
 def lang_bar(langs, w):

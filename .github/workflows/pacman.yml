@@ -17,7 +17,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
-        run: node scripts/pacman/generate.mjs --out output
+        run: |
+          node scripts/pacman/generate.mjs --out output
+          python3 scripts/chrome.py output/pacman.svg "pacman ./contributions" "⎇ main" "pellets only" "updated daily"
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
