@@ -112,5 +112,16 @@
    "TypeScript": 31229,
    "JavaScript": 614
   }
+ },
+ "proxio": {
+  "commits": 35,
+  "languages": {
+   "JavaScript": 650782,
+   "TypeScript": 601241,
+   "HTML": 113675,
+   "CSS": 22378,
+   "Batchfile": 16064,
+   "Shell": 14821
+  }
  }
 }

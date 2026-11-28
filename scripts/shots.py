@@ -33,6 +33,8 @@ SHOTS = {
     "jflp": (SRC / "jflp.webp", (0, 0, 1280, 587), THIRD, SHORT),
     # an offer as the bot posts it (an embed with the same fields as services/discord_sender.py; fictional offer)
     "acha-promocoes": (SRC / "acha-promocoes.webp", None, THIRD, SHORT),
+    # teacher dashboard: class summary cards and the BNCC skills x students heatmap
+    "proxio": (SRC / "proxio.webp", (250, 170, 1440, 660), HALF, TALL),
     "modaloop": (SRC / "modaloop.webp", (0, 0, 1609, 872), HALF, TALL),
     "vat": (SRC / "vat.webp", (0, 27, 1280, 720), HALF, TALL),
     # the Projetos page of the live site (heading, filters, first case study)
