@@ -15,7 +15,7 @@ OWNER = "alexzjss"
 REPOS = {
     "dasiboard": "dasiboard-omg", "sampanav": "SampaNav", "engrama": "engrama", "jflp": "jflp",
     "clawdesk": "clawdesk", "virtualjrpg": "virtualJRPG", "constela": "constela", "acha-promocoes": "acha-promocoes", "modaloop": "modaloop", "vat": "vat",
-    "icndy": "ICNDY", "website": "website", "eco-fruta": "eco-fruta",
+    "proxio": "proxio", "icndy": "ICNDY", "website": "website", "eco-fruta": "eco-fruta",
 }
 OUT = Path(__file__).resolve().parent / "data.json"
 

@@ -13,11 +13,13 @@
 
 <p align="center"><a href="https://github.com/alexzjss/dasiboard-omg"><img src="assets/card-dasiboard.svg" width="49.9%" alt="dasiboard"></a><a href="https://github.com/alexzjss/clawdesk"><img src="assets/card-clawdesk.svg" width="49.9%" alt="clawdesk"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="49.9%" alt="engrama"></a><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="49.9%" alt="constela"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/proxio"><img src="assets/card-proxio.svg" width="49.9%" alt="proxio"></a><a href="https://github.com/alexzjss/engrama"><img src="assets/card-engrama.svg" width="49.9%" alt="engrama"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="49.9%" alt="sampanav"></a><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="49.9%" alt="virtualjrpg"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/constela"><img src="assets/card-constela.svg" width="49.9%" alt="constela"></a><a href="https://github.com/alexzjss/SampaNav"><img src="assets/card-sampanav.svg" width="49.9%" alt="sampanav"></a></p>
 
-<p align="center"><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="32.9%" alt="jflp"></a><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="34.0%" alt="acha-promocoes"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="32.9%" alt="website"></a></p>
+<p align="center"><a href="https://github.com/alexzjss/virtualJRPG"><img src="assets/card-virtualjrpg.svg" width="49.9%" alt="virtualjrpg"></a><a href="https://github.com/alexzjss/jflp"><img src="assets/card-jflp.svg" width="49.9%" alt="jflp"></a></p>
+
+<p align="center"><a href="https://github.com/alexzjss/acha-promocoes"><img src="assets/card-acha-promocoes.svg" width="49.9%" alt="acha-promocoes"></a><a href="https://github.com/alexzjss/website"><img src="assets/card-website.svg" width="49.9%" alt="website"></a></p>
 
 <details>
 <summary><img src="assets/sec-more.svg" width="100%" alt="$ ls -a ~/projects/more [+4]"></summary>

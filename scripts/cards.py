@@ -43,6 +43,12 @@ PROJECTS = {
         "traits) and a lab for replayable simulations. Local memory and LLM chat, nothing leaves the machine.",
         ["py", "pygame", "sqlite", "ollama"],
         "SNN · PAD affect · pygame · Ollama"),
+    "proxio": (
+        "★ FLAGSHIP · EDTECH", "Próxio",
+        "Web platform against high-school dropout in Brazilian public schools: students link what they study to the future they want, "
+        "teachers get a map of where the class stalls. Deterministic rules, Gemini only writes text, RAG over BNCC.",
+        ["ts", "nextjs", "react", "vitest", "vercel"],
+        "Gemini 2.5 Flash · RAG · BNCC · MUI"),
     "jflp": (
         "◆ RESEARCH", "JFLP Studio",
         "Spectrum-Based Fault Localization on Defects4J and Bugs.jar, with a resumable run queue.",
@@ -99,7 +105,7 @@ PROJECTS = {
 
 # README rows, left to right, most important first: flagships two to a row, then the rest three to a row.
 # MORE is the collapsed block under the "ls -a ~/projects/more" button. Every row has one width per card, so the grid is uniform.
-LAYOUT = [["dasiboard", "clawdesk"], ["engrama", "constela"], ["sampanav", "virtualjrpg"], ["jflp", "acha-promocoes", "website"]]
+LAYOUT = [["dasiboard", "clawdesk"], ["proxio", "engrama"], ["constela", "sampanav"], ["virtualjrpg", "jflp"], ["acha-promocoes", "website"]]
 MORE = [["modaloop", "vat"], ["icndy", "eco-fruta"]]
 ROW_WIDTH = {2: HALF, 3: THIRD}
 ROW_SHOT_H = {2: 160, 3: 130}      # strip heights, = TALL / SHORT of scripts/shots.py
